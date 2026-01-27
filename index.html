@@ -37,10 +37,6 @@
             <div class="hero-content">
                 <h1>Революционизирайте логистиката си с <span class="highlight">LogiTruck</span></h1>
                 <h3 class="hero-subtitle">Интелигентен софтуер за управление на курсове, шофьори и камиони с автоматизация на процесите</h3>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Започнете безплатно</button>
-                    <type="button" class="btn-secondary">Вижте демо</button>
-                </div>
             </div>
             <div class="hero-image">
                 <div class="dashboard-preview">
@@ -280,29 +276,29 @@
                   action="https://formsubmit.co/metodiev@lumina-88.com"
                   method="POST">
 
-                <!-- Скрито поле за спам защита (препоръчително) -->
-                <input type="text" name="_gotcha" style="display:none" />
+                <!-- Скрито поле за спам защита (honeypot) -->
+                <input type="text" name="_honey" style="display:none">
 
-                <!-- Тема на писмото (много полезно) -->
+                <!-- Тема на писмото -->
                 <input type="hidden" name="_subject" value="Ново запитване от сайта LogiTruck">
 
-                <!-- Къде да пренасочи след успешно изпращане (създай thank-you.html) -->
-                <input type="hidden" name="_next" value="https://твоят-домен.com/thank-you.html">
+                <!-- Пренасочване след успешно изпращане -->
+                <input type="hidden" name="_next" value="thank-you.html">
 
-                <!-- Опционално: изключи reCAPTCHA ако не ти трябва -->
-                <!-- <input type="hidden" name="_captcha" value="false"> -->
+                <!-- Изключване на reCAPTCHA за по-лесно тестване -->
+                <input type="hidden" name="_captcha" value="false">
 
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Вашето име" required>
+                    <input type="text" name="name" placeholder="Вашето име">
                 </div>
                 <div class="form-group">
                     <input type="email" name="email" placeholder="Email адрес" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Телефон">
+                    <input type="tel" name="phone" placeholder="Телефон" required>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" placeholder="Вашето съобщение" rows="5" required></textarea>
+                    <textarea name="message" placeholder="Вашето съобщение" rows="5"></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary">Изпратете съобщение</button>
@@ -327,6 +323,5 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
