@@ -271,7 +271,7 @@
                 </div>
             </div>
 
-            <!-- Формата с FormSubmit.co – без регистрация -->
+            <!-- Формата с FormSubmit.co – при изпращане отваря thank-you.html -->
             <form class="contact-form"
                   action="https://formsubmit.co/metodiev@lumina-88.com"
                   method="POST">
@@ -282,8 +282,8 @@
                 <!-- Тема на писмото -->
                 <input type="hidden" name="_subject" value="Ново запитване от сайта LogiTruck">
 
-                <!-- Пренасочване след успешно изпращане -->
-                <input type="hidden" name="_next" value="thank-you.html">
+                <!-- Страница, която да се покаже след изпращане -->
+                <input type="hidden" name="_next" value="https://dmetodiev1.github.io/LogiTruckBG/thank-you.html">
 
                 <!-- Изключване на reCAPTCHA за по-лесно тестване -->
                 <input type="hidden" name="_captcha" value="false">
@@ -306,9 +306,6 @@
         </div>
     </div>
 </section>
-
-
-	
 
     <!-- Footer -->
     <footer class="footer">
