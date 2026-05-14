@@ -271,25 +271,16 @@
                 </div>
             </div>
 
-            <!-- Формата с FormSubmit.com – при изпращане отваря thank-you.html -->
+            <!-- Contact form with Formspree -->
             <form class="contact-form"
-                  action="https://formsubmit.com/metodiev@lumina-88.com"
+                  action="https://formspree.io/f/mqazopbn"
                   method="POST">
 
-                <!-- Скрито поле за спам защита (honeypot) -->
-                <input type="text" name="_honey" style="display:none">
-
-                <!-- Тема на писмото -->
-                <input type="hidden" name="_subject" value="Ново запитване от сайта LogiTruck">
-
-                <!-- Страница, която да се покаже след изпращане -->
-                <input type="hidden" name="_next" value="https://dmetodiev1.github.io/LogiTruckBG/thank-you.html">
-
-                <!-- Изключване на reCAPTCHA за по-лесно тестване -->
-                <input type="hidden" name="_captcha" value="false">
+                <!-- Redirect to thank-you page after submission -->
+                <input type="hidden" name="_next" value="thank-you.html">
 
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Вашето име">
+                    <input type="text" name="name" placeholder="Вашето име" required>
                 </div>
                 <div class="form-group">
                     <input type="email" name="email" placeholder="Email адрес" required>
@@ -298,7 +289,7 @@
                     <input type="tel" name="phone" placeholder="Телефон" required>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" placeholder="Вашето съобщение" rows="5"></textarea>
+                    <textarea name="message" placeholder="Вашето съобщение" rows="5" required></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary">Изпратете съобщение</button>

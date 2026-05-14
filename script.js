@@ -63,38 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Contact form handling
+// Contact form handling with Formspree
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const phone = contactForm.querySelector('input[type="tel"]').value;
-        const message = contactForm.querySelector('textarea').value;
-        
-        // Simple validation
-        if (!name || !email) {
-            alert('Моля, попълнете всички задължителни полета.');
-            return;
-        }
-        
-        // Simulate form submission
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         
         submitBtn.textContent = 'Изпраща се...';
         submitBtn.disabled = true;
         
-        setTimeout(() => {
-            alert('Благодарим ви! Вашето съобщение беше изпратено успешно.');
-            contactForm.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
+        // Let Formspree handle the submission naturally
+        // The form will submit and redirect to thank-you.html after success
     });
 }
 
