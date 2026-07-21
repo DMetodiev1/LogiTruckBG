@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1200, initial-scale=1" />
+    <title>LogiTruck social card</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fff;
+        background: #21103f;
+      }
+
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 86% 13%, rgb(151 91 255 / 42%), transparent 31%),
+          radial-gradient(circle at 39% 115%, rgb(255 185 51 / 18%), transparent 31%),
+          linear-gradient(135deg, #21103f 0%, #35145f 48%, #241144 100%);
+      }
+
+      .card::before {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+          linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
+        background-size: 44px 44px;
+        content: "";
+        mask-image: linear-gradient(to right, #000, transparent 82%);
+      }
+
+      .orb {
+        position: absolute;
+        top: -110px;
+        right: -60px;
+        width: 360px;
+        height: 360px;
+        border: 1px solid rgb(255 255 255 / 16%);
+        border-radius: 50%;
+        box-shadow: 0 0 0 58px rgb(255 255 255 / 3%), 0 0 0 116px rgb(255 255 255 / 2%);
+      }
+
+      .brand {
+        position: absolute;
+        top: 54px;
+        left: 64px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .brand img {
+        width: 52px;
+        height: 48px;
+        object-fit: contain;
+      }
+
+      .brand strong {
+        font-size: 31px;
+        letter-spacing: -1.2px;
+      }
+
+      .copy {
+        position: absolute;
+        top: 150px;
+        left: 64px;
+        z-index: 3;
+        width: 515px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0 0 23px;
+        color: #d5c6ef;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ffbd3d;
+        box-shadow: 0 0 18px #ffbd3d;
+        content: "";
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 65px;
+        line-height: 0.98;
+        letter-spacing: -3.4px;
+      }
+
+      h1 span {
+        display: block;
+        margin-top: 12px;
+        color: #ffbd3d;
+      }
+
+      .lead {
+        max-width: 465px;
+        margin: 27px 0 0;
+        color: #d7cce8;
+        font-size: 21px;
+        line-height: 1.42;
+      }
+
+      .product-window {
+        position: absolute;
+        top: 110px;
+        right: -24px;
+        z-index: 2;
+        width: 595px;
+        overflow: hidden;
+        border: 1px solid rgb(255 255 255 / 32%);
+        border-radius: 24px;
+        background: #fff;
+        box-shadow: 0 35px 80px rgb(9 3 20 / 48%);
+        transform: rotate(-2deg);
+      }
+
+      .browser-bar {
+        display: flex;
+        align-items: center;
+        height: 42px;
+        padding: 0 16px;
+        gap: 7px;
+        background: #f5f1f8;
+      }
+
+      .browser-bar i {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #ff786f;
+      }
+
+      .browser-bar i:nth-child(2) {
+        background: #ffc95c;
+      }
+
+      .browser-bar i:nth-child(3) {
+        background: #64dba2;
+      }
+
+      .browser-bar span {
+        margin-left: auto;
+        margin-right: auto;
+        color: #776e81;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      .product-window img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .insight {
+        position: absolute;
+        right: 56px;
+        bottom: 46px;
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        padding: 14px 18px;
+        border: 1px solid rgb(255 255 255 / 25%);
+        border-radius: 16px;
+        background: rgb(32 14 58 / 90%);
+        box-shadow: 0 18px 40px rgb(10 4 20 / 35%);
+        backdrop-filter: blur(10px);
+      }
+
+      .insight b {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border-radius: 12px;
+        color: #241144;
+        background: #ffbd3d;
+        font-size: 20px;
+      }
+
+      .insight span {
+        display: grid;
+        gap: 3px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .insight small {
+        color: #c9bddb;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .modules {
+        position: absolute;
+        bottom: 48px;
+        left: 64px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #f3edf9;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .modules span {
+        padding: 9px 12px;
+        border: 1px solid rgb(255 255 255 / 16%);
+        border-radius: 999px;
+        background: rgb(255 255 255 / 7%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" aria-label="LogiTruck — логистиката от курс до печалба">
+      <div class="orb"></div>
+
+      <div class="brand">
+        <img src="../../logo white.svg" alt="" />
+        <strong>LogiTruck</strong>
+      </div>
+
+      <section class="copy">
+        <p class="eyebrow">Операционната система за транспорта</p>
+        <h1>От курс до печалба.<span>Всичко на едно място.</span></h1>
+        <p class="lead">Курсове, автопарк, шофьори, документи и финанси в един свързан работен поток.</p>
+      </section>
+
+      <div class="product-window" aria-hidden="true">
+        <div class="browser-bar"><i></i><i></i><i></i><span>logitruck.lumina-88.com</span></div>
+        <img src="../screens/dashboard-demo.png" alt="" />
+      </div>
+
+      <div class="modules" aria-hidden="true">
+        <span>Курсове</span><span>Автопарк</span><span>Фактури</span><span>ROI</span>
+      </div>
+
+      <div class="insight" aria-hidden="true">
+        <b>↗</b>
+        <span>Пълен контрол<small>От заявката до печалбата</small></span>
+      </div>
+    </main>
+  </body>
+</html>
