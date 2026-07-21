@@ -1,315 +1,629 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LogiTruck - Интелигентен логистичен софтуер</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="logo black.svg" alt="LogiTruck" class="logo-img">
-                <span>LogiTruck</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="LogiTruck събира курсове, автопарк, шофьори, CMR, фактури, разходи и печалба в една ясна логистична платформа."
+    />
+    <meta name="theme-color" content="#241144" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="bg_BG" />
+    <meta property="og:title" content="LogiTruck — от курс до печалба" />
+    <meta
+      property="og:description"
+      content="Управлявайте курсове, автопарк, документи и финанси без разпилени таблици и ръчна работа."
+    />
+    <meta property="og:url" content="https://www.lumina-88.com/" />
+    <link rel="canonical" href="https://www.lumina-88.com/" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>LogiTruck — логистиката от курс до печалба</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "LogiTruck",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://www.lumina-88.com/",
+        "description": "Софтуер за управление на курсове, автопарк, шофьори, документи, фактури и транспортни финанси.",
+        "provider": {
+          "@type": "Organization",
+          "name": "ЛУМИНА 88 ЕООД"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Към основното съдържание</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="LogiTruck — начало">
+          <img src="logo black.svg" alt="" width="46" height="42" />
+          <span>LogiTruck</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Отвори менюто"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="primary-navigation" class="primary-nav" aria-label="Основна навигация" data-menu>
+          <a href="#solutions">Решения</a>
+          <a href="#product">Продукт</a>
+          <a href="#how-it-works">Как работи</a>
+          <a href="#roi">ROI калкулатор</a>
+          <a href="#contact">Контакт</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="text-link" href="https://logitruck.lumina-88.com/login">Вход</a>
+          <a class="button button-small button-primary" href="#route-demo">Безплатно демо</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="top" class="hero section-dark">
+        <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+        <div class="shell hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow eyebrow-light">
+              <span class="eyebrow-dot"></span>
+              Операционната система за транспортния бизнес
+            </p>
+            <h1>От курс до печалба. <span>Всичко на едно място.</span></h1>
+            <p class="hero-lead">
+              LogiTruck свързва диспечери, шофьори, автопарк, документи и финанси в
+              един работен поток — без разпилени таблици и пропуснати срокове.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-accent" href="#route-demo">
+                <i class="fa-solid fa-route" aria-hidden="true"></i>
+                Изчисли примерен курс
+              </a>
+              <a class="button button-ghost" href="#product">
+                Виж реалния интерфейс
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Начало</a></li>
-                <li><a href="#features">Функции</a></li>
-                <li><a href="#benefits">Предимства</a></li>
-                <li><a href="#contact">Контакт</a></li>
+
+            <ul class="hero-proof" aria-label="Основни предимства">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> 14-дневен тест</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Без банкова карта</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Поддръжка на български</li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+          </div>
 
-    <!-- Hero Section -->
-	
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Революционизирайте логистиката си с <span class="highlight">LogiTruck</span></h1>
-                <h3 class="hero-subtitle">Интелигентен софтуер за управление на курсове, шофьори и камиони с автоматизация на процесите</h3>
-            </div>
-            <div class="hero-image">
-                <div class="dashboard-preview">
-                    <i class="fas fa-chart-line"></i>
-                    <i class="fas fa-truck"></i>
-                    <i class="fas fa-user-tie"></i>
-                    <i class="fas fa-route"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Мощни функции за вашия бизнес</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3>График на курсове</h3>
-                    <p>Създавайте и управлявайте графици за зададени курсове с интуитивен календарен интерфейс</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Оптимален избор</h3>
-                    <p>Aлгоритъм за избор на най-подходящия шофьор и камион за всеки курс</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fab fa-viber"></i>
-                    </div>
-                    <h3>Viber уведомления</h3>
-                    <p>Автоматично изпращане на информация за курсове на шофьорите чрез Viber</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>База данни шофьори</h3>
-                    <p>Управление на документи и нотификации за изтичане на лицензи</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3>База данни камиони</h3>
-                    <p>Пълен профил на всеки камион: километри, товаримост, техническа поддръжка</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-history"></i>
-                    </div>
-                    <h3>Хронология на курсове</h3>
-                    <p>Пълна история на всички курсове с детайлна информация и ценообразуване</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Счетоводни справки</h3>
-                    <p>Автоматично генериране на справки и анализи за всички операции</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h3>Умни нотификации</h3>
-                    <p>Предварителни уведомления за изтичащи документи и поддръжка</p>
-                </div>
-
-                <!-- Нова функция за индивидуално настройване -->
-                <div class="feature-card premium">
-                    <div class="feature-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Индивидуално настройване</h3>
-                    <p>Персонализирана настройка и попълване на база данни директно в логистичния парк на клиента</p>
-                    <div class="premium-badge">Премиум услуга</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="benefits">
-        <div class="container">
-            <h2 class="section-title">Защо да изберете LogiTruck?</h2>
-            <div class="benefits-content">
-                <div class="benefits-text">
-                    <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h3>Автоматизация на процесите</h3>
-                            <p>Намалете ръчната работа с 80% чрез интелигентна автоматизация</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-chart-line"></i>
-                        <div>
-                            <h3>Повышение ефективност</h3>
-                            <p>Оптимизирайте маршрутите и намалете разходите за гориво и планиране</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <h3>Сигурност и надеждност</h3>
-                            <p>Безопасно съхранение на данни с автоматични резервни копия</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <div>
-                            <h3>Достъпност</h3>
-                            <p>Работи на всички устройства - компютър, таблет, телефон</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-tools"></i>
-                        <div>
-                            <h3>Персонализирано обслужване</h3>
-                            <p>Индивидуално настройване и внедряване директно в вашия логистичен парк</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="benefits-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Намаление на грешки</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">64%</div>
-                        <div class="stat-label">Спестяване на време</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">48%</div>
-                        <div class="stat-label">Намаление на разходи</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium Service Section -->
-    <section class="premium-service">
-        <div class="container">
-            <div class="premium-content">
-                <div class="premium-text">
-                    <h2>Персонализирано внедряване</h2>
-                    <p class="premium-subtitle">Нашият експертен екип ще дойде при вас и ще настрои системата според вашите специфични нужди</p>
-                    
-                    <div class="premium-features">
-                        <div class="premium-feature">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>На място настройване</h4>
-                                <p>Нашият екип ще дойде в логистичния ви парк и ще настрои системата според вашите нужди</p>
-                            </div>
-                        </div>
-                        
-                        <div class="premium-feature">
-                            <i class="fas fa-database"></i>
-                            <div>
-                                <h4>Попълване на база данни</h4>
-                                <p>Ще въведем всички ваши камиони, шофьори и маршрути в системата за вас</p>
-                            </div>
-                        </div>
-                        
-                        <div class="premium-feature">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <h4>Обучение на екипа</h4>
-                                <p>Ще обучим вашия екип как да използва системата ефективно</p>
-                            </div>
-                        </div>
-                        
-                        <div class="premium-feature">
-                            <i class="fas fa-headset"></i>
-                            <div>
-                                <h4>24/7 поддръжка</h4>
-                                <p>Персонализирана поддръжка и консултации за вашия бизнес</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="premium-cta">
-                        <button class="btn-primary">Запишете се за консултация</button>
-                        <p class="premium-note">* Цената се договаря индивидуално според обхвата на работата</p>
-                    </div>
-                </div>
-                
-                <div class="premium-image">
-                    <div class="premium-visual">
-                        <i class="fas fa-truck"></i>
-                        <i class="fas fa-users"></i>
-                        <i class="fas fa-laptop"></i>
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-	<!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">Готови сте да започнете?</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Свържете се с нас</h3>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+359 892374768</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>metodiev@lumina-88.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Тутракан, България</span>
-                </div>
+          <div id="route-demo" class="route-demo reveal" data-delay="120">
+            <div class="demo-heading">
+              <div>
+                <p class="demo-kicker">Интерактивно демо</p>
+                <h2>Изпробвай LogiTruck</h2>
+              </div>
+              <span class="live-pill"><span></span> Без регистрация</span>
             </div>
 
-            <!-- Contact form with Formspree -->
-            <form class="contact-form"
-                  action="https://formspree.io/f/mykoaazb"
-                  method="POST">
+            <form id="route-form" class="route-form">
+              <div class="route-fields route-fields-main">
+                <label>
+                  <span>От</span>
+                  <span class="input-shell">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <select id="from-city" name="from" required>
+                      <option value="sofia" selected>София</option>
+                      <option value="plovdiv">Пловдив</option>
+                      <option value="ruse">Русе</option>
+                      <option value="varna">Варна</option>
+                      <option value="burgas">Бургас</option>
+                      <option value="bucharest">Букурещ</option>
+                      <option value="thessaloniki">Солун</option>
+                    </select>
+                  </span>
+                </label>
+                <span class="route-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+                <label>
+                  <span>До</span>
+                  <span class="input-shell">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <select id="to-city" name="to" required>
+                      <option value="berlin" selected>Берлин</option>
+                      <option value="munich">Мюнхен</option>
+                      <option value="vienna">Виена</option>
+                      <option value="budapest">Будапеща</option>
+                      <option value="prague">Прага</option>
+                      <option value="bucharest">Букурещ</option>
+                      <option value="istanbul">Истанбул</option>
+                    </select>
+                  </span>
+                </label>
+              </div>
 
-                <!-- Redirect to thank-you page after submission -->
-                <input type="hidden" name="_next" value="thank-you.html">
+              <div class="route-fields route-fields-secondary">
+                <label>
+                  <span>Дата</span>
+                  <span class="input-shell">
+                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                    <input id="route-date" name="date" type="date" required />
+                  </span>
+                </label>
+                <label>
+                  <span>Камион</span>
+                  <span class="input-shell">
+                    <i class="fa-solid fa-truck" aria-hidden="true"></i>
+                    <select id="truck-type" name="truck">
+                      <option value="euro6" selected>Влекач Euro 6 · 40 т</option>
+                      <option value="reefer">Хладилен · 40 т</option>
+                      <option value="van">Бус · 3.5 т</option>
+                    </select>
+                  </span>
+                </label>
+                <label>
+                  <span>Товар</span>
+                  <span class="input-shell">
+                    <i class="fa-solid fa-box" aria-hidden="true"></i>
+                    <select id="cargo-type" name="cargo">
+                      <option value="general" selected>Генерален товар</option>
+                      <option value="chilled">Температурен режим</option>
+                      <option value="adr">ADR товар</option>
+                    </select>
+                  </span>
+                </label>
+              </div>
 
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Вашето име" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email адрес" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Телефон" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Вашето съобщение" rows="5" required></textarea>
-                </div>
-
-                <button type="submit" class="btn-primary">Изпратете съобщение</button>
+              <button class="button button-accent demo-submit" type="submit">
+                <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                Изчисли с LogiTruck
+              </button>
             </form>
-        </div>
-    </div>
-</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="logo white.svg" alt="LogiTruck" class="footer-logo-img">
-                    <span>LogiTruck</span>
-                </div>
-                <p>&copy; 2026 LogiTruck. Всички права запазени.</p>
+            <div class="route-results" aria-live="polite" aria-atomic="true">
+              <div class="result-driver">
+                <span class="driver-avatar" id="driver-initials">ИП</span>
+                <span>
+                  <small>Предложен шофьор</small>
+                  <strong id="suggested-driver">Иван Петров</strong>
+                </span>
+                <span class="fit-score"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 96% съвпадение</span>
+              </div>
+              <div class="result-grid">
+                <div><small>Маршрут</small><strong id="route-distance">1 630 км</strong></div>
+                <div><small>Гориво</small><strong id="fuel-cost">795 €</strong></div>
+                <div><small>Тол такси</small><strong id="toll-cost">261 €</strong></div>
+                <div><small>Време</small><strong id="travel-time">23 ч 20 мин</strong></div>
+              </div>
+              <div class="profit-row">
+                <span>
+                  <small>Очаквана печалба</small>
+                  <strong id="expected-profit">+860 €</strong>
+                </span>
+                <span class="margin-chip" id="profit-margin">34% марж</span>
+              </div>
+              <p class="estimate-note">Примерна симулация за представяне на работния процес. Реалните стойности зависят от въведените тарифи.</p>
             </div>
+          </div>
         </div>
+
+        <div class="shell module-strip">
+          <span>Курсове</span><i></i><span>Автопарк</span><i></i><span>Шофьори</span><i></i><span>Клиенти</span><i></i><span>Фактури</span><i></i><span>Заплати</span><i></i><span>Отчети</span>
+        </div>
+      </section>
+
+      <section id="solutions" class="section section-soft problems-section">
+        <div class="shell">
+          <div class="section-heading centered reveal">
+            <p class="eyebrow">Решаваме ежедневните блокажи</p>
+            <h2>Не още един списък с функции.<br />Решения на реални проблеми.</h2>
+            <p>LogiTruck премахва ръчните стъпки между заявката, изпълнението и финансовия резултат.</p>
+          </div>
+
+          <div class="problem-grid">
+            <article class="problem-card reveal">
+              <span class="problem-icon"><i class="fa-solid fa-user-clock" aria-hidden="true"></i></span>
+              <p class="problem-question"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Не знаете кой шофьор е свободен?</p>
+              <span class="solution-arrow"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></span>
+              <h3>LogiTruck предлага най-подходящия</h3>
+              <p>Спрямо график, документи, категории, заетост и налично МПС.</p>
+            </article>
+            <article class="problem-card reveal" data-delay="80">
+              <span class="problem-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></span>
+              <p class="problem-question"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Фактурите се губят?</p>
+              <span class="solution-arrow"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></span>
+              <h3>Сканират се автоматично</h3>
+              <p>OCR извлича номер, доставчик, сума и дата, после свързва разхода с курса.</p>
+            </article>
+            <article class="problem-card reveal" data-delay="160">
+              <span class="problem-icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span>
+              <p class="problem-question"><i class="fa-solid fa-xmark" aria-hidden="true"></i> CMR се попълват ръчно?</p>
+              <span class="solution-arrow"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></span>
+              <h3>Генерират се за секунди</h3>
+              <p>Данните от курса, клиента, товара и превозвача влизат директно в документа.</p>
+            </article>
+            <article class="problem-card reveal" data-delay="240">
+              <span class="problem-icon"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i></span>
+              <p class="problem-question"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Нямате контрол върху разходите?</p>
+              <span class="solution-arrow"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></span>
+              <h3>Всеки курс има собствен отчет</h3>
+              <p>Приход, гориво, пътни такси, заплата и печалба са видими на едно място.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section workflow-section section-dark" aria-labelledby="workflow-title">
+        <div class="shell">
+          <div class="workflow-heading reveal">
+            <div>
+              <p class="eyebrow eyebrow-light">Един свързан процес</p>
+              <h2 id="workflow-title">Виж как един курс минава през LogiTruck</h2>
+              <p>От заявката до измеримата печалба — за 30 секунди.</p>
+            </div>
+            <button class="workflow-toggle" type="button" data-workflow-toggle aria-pressed="false">
+              <i class="fa-solid fa-pause" aria-hidden="true"></i>
+              <span>Пауза</span>
+            </button>
+          </div>
+
+          <div class="workflow-board reveal" data-delay="100">
+            <fieldset class="workflow-steps">
+              <legend class="sr-only">Стъпки на курса</legend>
+              <button class="workflow-step is-active" type="button" data-workflow-step="0">
+                <span>01</span><i class="fa-solid fa-route" aria-hidden="true"></i><strong>Нов курс</strong><small>София → Берлин</small>
+              </button>
+              <button class="workflow-step" type="button" data-workflow-step="1">
+                <span>02</span><i class="fa-solid fa-user-check" aria-hidden="true"></i><strong>Шофьор</strong><small>96% съвпадение</small>
+              </button>
+              <button class="workflow-step" type="button" data-workflow-step="2">
+                <span>03</span><i class="fa-solid fa-file-signature" aria-hidden="true"></i><strong>CMR</strong><small>Готов документ</small>
+              </button>
+              <button class="workflow-step" type="button" data-workflow-step="3">
+                <span>04</span><i class="fa-solid fa-file-invoice" aria-hidden="true"></i><strong>Фактура</strong><small>OCR разпознаване</small>
+              </button>
+              <button class="workflow-step" type="button" data-workflow-step="4">
+                <span>05</span><i class="fa-solid fa-coins" aria-hidden="true"></i><strong>Разходи</strong><small>Автоматичен отчет</small>
+              </button>
+              <button class="workflow-step" type="button" data-workflow-step="5">
+                <span>06</span><i class="fa-solid fa-chart-line" aria-hidden="true"></i><strong>Печалба</strong><small>+860 €</small>
+              </button>
+            </fieldset>
+
+            <div class="workflow-screen">
+              <div class="fake-window-bar">
+                <span></span><span></span><span></span>
+                <p>LogiTruck / Курс LT-2048</p>
+                <span class="secure-label"><i class="fa-solid fa-lock" aria-hidden="true"></i> Защитена среда</span>
+              </div>
+              <div class="workflow-screen-body">
+                <aside class="mini-sidebar" aria-hidden="true">
+                  <span class="mini-brand"><img src="logo white.svg" alt="" /><strong>LT</strong></span>
+                  <i class="fa-solid fa-table-cells-large"></i>
+                  <i class="fa-solid fa-truck"></i>
+                  <i class="fa-solid fa-route is-current"></i>
+                  <i class="fa-regular fa-id-card"></i>
+                  <i class="fa-solid fa-file-invoice"></i>
+                </aside>
+                <div class="workflow-content">
+                  <div class="workflow-topline">
+                    <div><small>Курс LT-2048</small><h3>София <i class="fa-solid fa-arrow-right"></i> Берлин</h3></div>
+                    <span class="status-badge" data-workflow-status>Нова заявка</span>
+                  </div>
+                  <div class="workflow-kpis">
+                    <div><small>Разстояние</small><strong>1 630 км</strong></div>
+                    <div><small>Приход</small><strong>2 540 €</strong></div>
+                    <div><small>Разход</small><strong data-workflow-cost>—</strong></div>
+                    <div class="kpi-profit"><small>Печалба</small><strong data-workflow-profit>—</strong></div>
+                  </div>
+                  <div class="workflow-detail-grid">
+                    <div class="route-visual">
+                      <div class="route-map-grid" aria-hidden="true"></div>
+                      <span class="map-point map-point-start"><i></i> София</span>
+                      <span class="map-line" aria-hidden="true"></span>
+                      <span class="map-truck"><i class="fa-solid fa-truck"></i></span>
+                      <span class="map-point map-point-end"><i></i> Берлин</span>
+                    </div>
+                    <div class="workflow-event" data-workflow-event>
+                      <span class="event-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>
+                      <div><small>LogiTruck обработва</small><strong>Създаване на транспортна заявка</strong><p>Маршрут, товар и срок са записани.</p></div>
+                      <span class="event-check"><i class="fa-solid fa-check"></i></span>
+                    </div>
+                  </div>
+                  <div class="workflow-progress"><span data-workflow-progress></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section updates-section" aria-labelledby="updates-title">
+        <div class="shell">
+          <div class="section-heading split-heading reveal">
+            <div>
+              <p class="eyebrow">Последни подобрения</p>
+              <h2 id="updates-title">LogiTruck се развива заедно с вашия бизнес</h2>
+            </div>
+            <p>Нови автоматизации и модули влизат постоянно, без да усложняват ежедневната работа.</p>
+          </div>
+
+          <div class="updates-grid">
+            <article class="update-card reveal"><span class="new-badge">NEW</span><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i><div><h3>OCR Invoice Scanner</h3><p>Разпознава разходни фактури и извлича ключовите данни.</p></div></article>
+            <article class="update-card reveal" data-delay="60"><span class="new-badge">NEW</span><i class="fa-solid fa-file-signature" aria-hidden="true"></i><div><h3>Automatic CMR</h3><p>Генерира CMR директно от данните на курса.</p></div></article>
+            <article class="update-card reveal" data-delay="120"><span class="new-badge">NEW</span><i class="fa-solid fa-money-check-dollar" aria-hidden="true"></i><div><h3>Driver Payroll</h3><p>Изчислява възнаграждения и плащания към шофьори.</p></div></article>
+            <article class="update-card reveal"><span class="new-badge">NEW</span><i class="fa-solid fa-users" aria-hidden="true"></i><div><h3>Customer CRM</h3><p>Клиенти, контакти, маршрути и фактури в един профил.</p></div></article>
+            <article class="update-card reveal" data-delay="60"><span class="new-badge">NEW</span><i class="fa-solid fa-user-check" aria-hidden="true"></i><div><h3>Smart Recommendation</h3><p>Подрежда най-подходящите шофьори за всеки курс.</p></div></article>
+            <article class="update-card reveal" data-delay="120"><span class="new-badge">NEW</span><i class="fa-solid fa-chart-column" aria-hidden="true"></i><div><h3>Financial Control</h3><p>Свързва приходите и разходите с реалния курс.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section section-soft features-section" aria-labelledby="features-title">
+        <div class="shell">
+          <div class="section-heading centered reveal">
+            <p class="eyebrow">Всичко необходимо. Без излишен шум.</p>
+            <h2 id="features-title">Една платформа за целия транспортен цикъл</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card reveal"><span><i class="fa-solid fa-route"></i></span><h3>Курсове</h3><p>Планиране, календар, статуси и пълна хронология.</p><a href="#how-it-works">Виж процеса <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="50"><span><i class="fa-solid fa-truck-front"></i></span><h3>Автопарк</h3><p>Камиони, ремаркета, километри и документи.</p><a href="#product">Виж интерфейса <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="100"><span><i class="fa-regular fa-id-card"></i></span><h3>Шофьори</h3><p>Заетост, категории, срокове и препоръки.</p><a href="#solutions">Виж решението <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="150"><span><i class="fa-solid fa-file-signature"></i></span><h3>CMR</h3><p>Автоматично генериране от данните на курса.</p><a href="#workflow-title">Виж автоматизацията <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal"><span><i class="fa-solid fa-file-invoice-dollar"></i></span><h3>OCR фактури</h3><p>Разпознаване, проверка и връзка с конкретен курс.</p><a href="#product">Виж фактурите <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="50"><span><i class="fa-solid fa-wallet"></i></span><h3>Заплати</h3><p>Автоматично изчисление и история на плащанията.</p><a href="#roi">Изчисли ефекта <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="100"><span><i class="fa-solid fa-address-book"></i></span><h3>Клиенти</h3><p>CRM с контакти, маршрути, курсове и документи.</p><a href="#product">Виж продукта <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="150"><span><i class="fa-solid fa-chart-line"></i></span><h3>Финанси</h3><p>Приход, разход, марж и печалба по всеки курс.</p><a href="#roi">ROI калкулатор <i class="fa-solid fa-arrow-right"></i></a></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="product" class="section product-section" aria-labelledby="product-title">
+        <div class="shell">
+          <div class="section-heading centered reveal">
+            <p class="eyebrow">Реален продукт. Демонстрационни данни.</p>
+            <h2 id="product-title">Интерфейсът, който екипът ви ще използва всеки ден</h2>
+            <p>Без маркетингови мокъпи — кадри от работещата LogiTruck демо среда.</p>
+          </div>
+
+          <div id="product-story" class="product-story">
+            <div class="product-sticky">
+              <div class="product-showcase">
+                <div class="screen-tabs" role="tablist" aria-label="Екрани от LogiTruck">
+                  <button id="screen-tab-dashboard" class="screen-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="product-screen-dashboard" data-screen="dashboard">
+                    <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Табло<small>Денят с един поглед</small></span>
+                  </button>
+                  <button id="screen-tab-trips" class="screen-tab" type="button" role="tab" aria-selected="false" aria-controls="product-screen-trips" data-screen="trips">
+                    <i class="fa-solid fa-route" aria-hidden="true"></i><span>Курсове<small>Календар и планиране</small></span>
+                  </button>
+                  <button id="screen-tab-invoices" class="screen-tab" type="button" role="tab" aria-selected="false" aria-controls="product-screen-invoices" data-screen="invoices">
+                    <i class="fa-solid fa-file-invoice" aria-hidden="true"></i><span>Фактури<small>Приходи и разходи</small></span>
+                  </button>
+                  <div class="screen-scroll-cue" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <span>Скролвай, за да разгледаш</span>
+                  </div>
+                </div>
+
+                <div class="product-stage">
+                  <div id="product-screen-dashboard" class="product-screen is-active" role="tabpanel" aria-labelledby="screen-tab-dashboard" data-screen-slide="dashboard">
+                    <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span><p>logitruck.lumina-88.com</p></div>
+                    <img
+                      src="assets/screens/dashboard-demo.png"
+                      alt="Реалното LogiTruck табло с демонстрационни курсове, документи и финансови показатели"
+                      width="1515"
+                      height="728"
+                    />
+                  </div>
+                  <div id="product-screen-trips" class="product-screen" role="tabpanel" aria-labelledby="screen-tab-trips" data-screen-slide="trips" aria-hidden="true">
+                    <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span><p>logitruck.lumina-88.com</p></div>
+                    <img
+                      src="assets/screens/trips-demo.png"
+                      alt="Реалният календар на курсовете в LogiTruck с демонстрационни транспортни задачи"
+                      width="1515"
+                      height="728"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div id="product-screen-invoices" class="product-screen" role="tabpanel" aria-labelledby="screen-tab-invoices" data-screen-slide="invoices" aria-hidden="true">
+                    <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span><p>logitruck.lumina-88.com</p></div>
+                    <img
+                      src="assets/screens/invoices-demo.png"
+                      alt="Реалният модул за фактури в LogiTruck с демонстрационни финансови данни"
+                      width="1515"
+                      height="728"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                <div class="product-progress" aria-hidden="true"><span id="product-progress-fill"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="section how-section section-soft" aria-labelledby="how-title">
+        <div class="shell">
+          <div class="section-heading centered reveal">
+            <p class="eyebrow">Ясен процес от край до край</p>
+            <h2 id="how-title">Как работи LogiTruck</h2>
+            <p>Всяка следваща стъпка използва вече въведените данни. Без двойно писане.</p>
+          </div>
+
+          <ol class="how-flow">
+            <li class="reveal"><span>1</span><i class="fa-solid fa-route" aria-hidden="true"></i><h3>Добавяш курс</h3><p>Маршрут, товар, срок и цена.</p></li>
+            <li class="reveal" data-delay="50"><span>2</span><i class="fa-solid fa-user-check" aria-hidden="true"></i><h3>Получаваш шофьор</h3><p>Спрямо реалната наличност.</p></li>
+            <li class="reveal" data-delay="100"><span>3</span><i class="fa-solid fa-file-signature" aria-hidden="true"></i><h3>Генерираш CMR</h3><p>Документът е попълнен автоматично.</p></li>
+            <li class="reveal" data-delay="150"><span>4</span><i class="fa-solid fa-receipt" aria-hidden="true"></i><h3>Следиш разходите</h3><p>Гориво, тол, командировъчни.</p></li>
+            <li class="reveal" data-delay="200"><span>5</span><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i><h3>Издаваш фактура</h3><p>Свързана с клиента и курса.</p></li>
+            <li class="reveal" data-delay="250"><span>6</span><i class="fa-solid fa-chart-line" aria-hidden="true"></i><h3>Виждаш печалбата</h3><p>Резултатът е измерим веднага.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section intelligence-section section-dark" aria-labelledby="intelligence-title">
+        <div class="shell">
+          <div class="section-heading split-heading reveal">
+            <div><p class="eyebrow eyebrow-light">Следващото ниво</p><h2 id="intelligence-title">Не само записва данни.<br />Помага да вземете решение.</h2></div>
+            <p>LogiTruck превръща оперативната информация в ясни препоръки, показатели и действия.</p>
+          </div>
+
+          <div class="intelligence-grid">
+            <article class="ai-card reveal">
+              <div class="card-label"><i class="fa-solid fa-sparkles"></i> AI асистент</div>
+              <div class="chat-bubble chat-user">Имам товар за Германия утре.</div>
+              <div class="chat-bubble chat-ai">
+                <span class="ai-avatar"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                <div><strong>Предлагам Иван Петров.</strong><p>Свободен е, документите му са валидни и има 14 сходни курса.</p><dl><div><dt>Очаквана печалба</dt><dd>510 €</dd></div><div><dt>Очакван разход</dt><dd>820 €</dd></div></dl></div>
+              </div>
+            </article>
+
+            <article class="kpi-card reveal" data-delay="100">
+              <div class="card-label"><i class="fa-solid fa-chart-simple"></i> KPI Dashboard</div>
+              <p class="kpi-date">Днес, 21 юли</p>
+              <div class="kpi-demo-grid">
+                <div><small>Приход</small><strong>9 050 €</strong><span class="trend-up">+12.4%</span></div>
+                <div><small>Печалба</small><strong>6 400 €</strong><span class="trend-up">+8.7%</span></div>
+                <div><small>МПС в движение</small><strong>7</strong><span>от 10</span></div>
+                <div><small>Свободни шофьори</small><strong>3</strong><span>налични сега</span></div>
+              </div>
+              <div class="sparkline" aria-hidden="true"><i class="bar-28"></i><i class="bar-48"></i><i class="bar-38"></i><i class="bar-64"></i><i class="bar-58"></i><i class="bar-82"></i><i class="bar-94"></i></div>
+            </article>
+
+            <article class="operations-card reveal" data-delay="200">
+              <div class="card-label"><i class="fa-solid fa-map-location-dot"></i> Live Operations</div>
+              <div class="operations-map">
+                <span class="op-route route-a"></span><span class="op-route route-b"></span><span class="op-route route-c"></span>
+                <span class="city city-sofia">София<i></i></span><span class="city city-vienna">Виена<i></i></span><span class="city city-berlin">Берлин<i></i></span><span class="city city-bucharest">Букурещ<i></i></span>
+                <span class="moving-truck truck-a"><i class="fa-solid fa-truck"></i></span><span class="moving-truck truck-b"><i class="fa-solid fa-truck"></i></span>
+              </div>
+              <div class="operations-legend"><span><i class="green-dot"></i> 7 в движение</span><span><i class="violet-dot"></i> 3 планирани</span><span><i class="orange-dot"></i> 1 изисква внимание</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="roi" class="section roi-section" aria-labelledby="roi-title">
+        <div class="shell roi-grid">
+          <div class="roi-copy reveal">
+            <p class="eyebrow">ROI калкулатор</p>
+            <h2 id="roi-title">Колко струва ръчната работа на вашия автопарк?</h2>
+            <p>Въведете приблизителния размер на операциите си и вижте ориентировъчния месечен ефект от автоматизацията.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> По-малко административни часове</li>
+              <li><i class="fa-solid fa-check"></i> По-добър контрол на разходите</li>
+              <li><i class="fa-solid fa-check"></i> Повече видима печалба по курс</li>
+            </ul>
+          </div>
+
+          <div class="roi-calculator reveal" data-delay="100">
+            <div class="roi-inputs">
+              <div class="roi-control-label"><label for="roi-trucks">Камиони</label><output id="roi-trucks-output" for="roi-trucks">10</output></div>
+              <input id="roi-trucks" type="range" min="1" max="100" value="10" />
+              <div class="roi-control-label"><label for="roi-drivers">Шофьори</label><output id="roi-drivers-output" for="roi-drivers">12</output></div>
+              <input id="roi-drivers" type="range" min="1" max="130" value="12" />
+              <div class="roi-control-label"><label for="roi-trips">Курсове на месец</label><output id="roi-trips-output" for="roi-trips">150</output></div>
+              <input id="roi-trips" type="range" min="10" max="1000" step="10" value="150" />
+            </div>
+            <div class="roi-results" aria-live="polite">
+              <div><span class="roi-result-icon time"><i class="fa-regular fa-clock"></i></span><p>Спестено време<small>ориентировъчно на месец</small></p><strong id="roi-time">42 часа</strong></div>
+              <div><span class="roi-result-icon savings"><i class="fa-solid fa-piggy-bank"></i></span><p>Спестени разходи<small>ориентировъчно на месец</small></p><strong id="roi-savings">1 400 €</strong></div>
+              <div class="roi-result-profit"><span class="roi-result-icon profit"><i class="fa-solid fa-arrow-trend-up"></i></span><p>Потенциален ефект<small>по-добър контрол и марж</small></p><strong id="roi-profit">+3 200 €</strong></div>
+            </div>
+            <p class="estimate-note">Оценката е индикативна и не представлява гарантиран финансов резултат. Ще изчислим точен модел по време на демонстрацията.</p>
+            <a class="button button-primary button-full" href="#contact">Поискай персонален ROI анализ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section why-section section-soft" aria-labelledby="why-title">
+        <div class="shell why-grid">
+          <div class="why-copy reveal">
+            <p class="eyebrow">Защо LogiTruck?</p>
+            <h2 id="why-title">Един източник на истина за целия транспортен екип</h2>
+            <p>Диспечерът, управителят и счетоводството виждат една и съща актуална информация.</p>
+            <a class="button button-primary" href="https://logitruck.lumina-88.com/register">Започни 14-дневен тест</a>
+          </div>
+          <ul class="why-list reveal" data-delay="100">
+            <li><i class="fa-solid fa-user-check"></i><span><strong>Избира най-подходящия шофьор</strong><small>Наличност, категории, документи и заетост.</small></span></li>
+            <li><i class="fa-solid fa-file-circle-check"></i><span><strong>Сканира фактури</strong><small>OCR прочита и структурира разходния документ.</small></span></li>
+            <li><i class="fa-solid fa-file-signature"></i><span><strong>Генерира CMR</strong><small>Данните от курса се пренасят автоматично.</small></span></li>
+            <li><i class="fa-solid fa-coins"></i><span><strong>Следи разходи и печалба</strong><small>Финансов резултат за всеки отделен курс.</small></span></li>
+            <li><i class="fa-solid fa-bell"></i><span><strong>Следи документи</strong><small>Предупреждения преди изтичане на важни срокове.</small></span></li>
+            <li><i class="fa-solid fa-wallet"></i><span><strong>Изчислява заплати</strong><small>История, плащания и отчетност към шофьорите.</small></span></li>
+            <li><i class="fa-solid fa-address-book"></i><span><strong>Управлява клиенти</strong><small>CRM, контакти, маршрути и документи.</small></span></li>
+            <li><i class="fa-solid fa-shield-halved"></i><span><strong>Пази фирмените данни</strong><small>Контролиран достъп и сигурна облачна среда.</small></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section section-dark" aria-labelledby="contact-title">
+        <div class="shell contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow eyebrow-light">Безплатна демонстрация</p>
+            <h2 id="contact-title">Покажете ни как работите днес.<br />Ще ви покажем по-краткия път.</h2>
+            <p>30 минути, реален сценарий от вашия бизнес и конкретен план за внедряване.</p>
+            <div class="contact-details">
+              <a href="tel:+359892374768"><i class="fa-solid fa-phone"></i><span><small>Телефон</small>+359&nbsp;892&nbsp;374&nbsp;768</span></a>
+              <a href="mailto:metodiev@lumina-88.com"><i class="fa-solid fa-envelope"></i><span><small>Имейл</small>metodiev@lumina-88.com</span></a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" data-delay="100" action="https://formspree.io/f/mykoaazb" method="post">
+            <input type="hidden" name="_next" value="https://www.lumina-88.com/thank-you.html" />
+            <input type="hidden" name="_subject" value="Нова заявка за LogiTruck демонстрация" />
+            <div class="form-row">
+              <label><span>Име и фамилия</span><input type="text" name="name" autocomplete="name" placeholder="Вашето име" required /></label>
+              <label><span>Фирма</span><input type="text" name="company" autocomplete="organization" placeholder="Име на фирмата" required /></label>
+            </div>
+            <div class="form-row">
+              <label><span>Служебен имейл</span><input type="email" name="email" autocomplete="email" placeholder="name@company.bg" required /></label>
+              <label><span>Телефон</span><input type="tel" name="phone" autocomplete="tel" placeholder="+359 ..." required /></label>
+            </div>
+            <label><span>Колко камиона управлявате?</span><select name="fleet_size"><option value="1-5">1–5</option><option value="6-15">6–15</option><option value="16-30">16–30</option><option value="31-60">31–60</option><option value="60+">Над 60</option></select></label>
+            <label><span>Кой процес искате да подобрите първо?</span><textarea name="message" rows="3" placeholder="Курсове, документи, фактури, разходи..."></textarea></label>
+            <label class="consent"><input type="checkbox" name="privacy_consent" required /><span>Съгласен/на съм данните ми да бъдат използвани за контакт относно LogiTruck. <a href="https://logitruck.lumina-88.com/privacy-policy" target="_blank" rel="noreferrer">Поверителност</a></span></label>
+            <button class="button button-accent button-full" type="submit"><i class="fa-regular fa-calendar-check"></i> Запази безплатна демонстрация</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div class="footer-brand"><a class="brand brand-light" href="#top"><img src="logo white.svg" alt="" width="46" height="42" /><span>LogiTruck</span></a><p>Логистиката от курс до печалба.</p></div>
+        <div><h2>Продукт</h2><a href="#features">Функции</a><a href="#product">Интерфейс</a><a href="#how-it-works">Как работи</a><a href="#roi">ROI калкулатор</a></div>
+        <div><h2>Достъп</h2><a href="https://logitruck.lumina-88.com/login">Вход</a><a href="https://logitruck.lumina-88.com/register">Регистрация</a><a href="#contact">Демонстрация</a></div>
+        <div><h2>Контакт</h2><a href="mailto:metodiev@lumina-88.com">metodiev@lumina-88.com</a><a href="tel:+359892374768">+359&nbsp;892&nbsp;374&nbsp;768</a><span>Тутракан, България</span></div>
+      </div>
+      <div class="shell footer-bottom"><p>© 2026 „ЛУМИНА 88“ ЕООД. Всички права запазени.</p><div><a href="https://logitruck.lumina-88.com/terms-of-use">Условия</a><a href="https://logitruck.lumina-88.com/privacy-policy">Поверителност</a></div></div>
     </footer>
 
-</body>
+    <a class="floating-demo" href="#route-demo" aria-label="Изпробвай интерактивното LogiTruck демо">
+      <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></span>
+      <strong>Изпробвай LogiTruck<small>Без регистрация</small></strong>
+    </a>
+
+    <script src="script.js" defer></script>
+  </body>
 </html>

@@ -1,13 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Благодарим!</title>
-</head>
-<body style="font-family:Arial; text-align:center; padding:100px 20px;">
-    <h1>Благодарим ви!</h1>
-    <p>Получихме вашето запитване. Ще се свържем с вас в най-кратък срок.</p>
-    <a href="index.html">Обратно към сайта</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#241144" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Благодарим ви — LogiTruck</title>
+    <style>
+      .thanks-page {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 30px;
+        color: #fff;
+        text-align: center;
+        background:
+          radial-gradient(circle at 20% 15%, rgb(146 92 242 / 35%), transparent 32%),
+          radial-gradient(circle at 85% 80%, rgb(255 189 61 / 12%), transparent 28%),
+          #1c0c36;
+      }
+
+      .thanks-card {
+        width: min(620px, 100%);
+        padding: 55px;
+        border: 1px solid rgb(255 255 255 / 12%);
+        border-radius: 30px;
+        background: rgb(255 255 255 / 7%);
+        box-shadow: 0 40px 100px rgb(0 0 0 / 30%);
+        backdrop-filter: blur(16px);
+      }
+
+      .thanks-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 auto 35px;
+        color: #fff;
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .thanks-brand img {
+        width: 46px;
+        height: 46px;
+        object-fit: contain;
+      }
+
+      .thanks-icon {
+        display: grid;
+        width: 70px;
+        height: 70px;
+        place-items: center;
+        margin: 0 auto 25px;
+        border-radius: 50%;
+        color: #067647;
+        background: #d1fadf;
+        font-size: 27px;
+      }
+
+      .thanks-card h1 {
+        margin-bottom: 15px;
+        font-size: clamp(34px, 7vw, 50px);
+      }
+
+      .thanks-card p {
+        margin: 0 auto 28px;
+        color: rgb(255 255 255 / 65%);
+      }
+
+      @media (max-width: 600px) {
+        .thanks-card { padding: 38px 22px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="thanks-page">
+      <section class="thanks-card" aria-labelledby="thanks-title">
+        <a class="thanks-brand" href="index.html"><img src="logo white.svg" alt="" /><span>LogiTruck</span></a>
+        <span class="thanks-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+        <h1 id="thanks-title">Получихме заявката ви.</h1>
+        <p>Ще се свържем с вас, за да уточним удобен час и конкретния сценарий за демонстрацията.</p>
+        <a class="button button-accent" href="index.html">Обратно към LogiTruck</a>
+      </section>
+    </main>
+  </body>
 </html>
