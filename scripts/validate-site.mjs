@@ -44,6 +44,7 @@ for (const path of htmlFiles) {
     titles.set(title, name);
   }
   if (/14-днев|GPS проследяване|Повышение|директно в вашия/.test(source)) errors.push(`${name}: contains stale or unsupported claim`);
+  if (/<a class="related-card"[^>]*><strong>\//.test(source)) errors.push(`${name}: related card exposes a raw URL as its title`);
 
   for (const match of source.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)) {
     try { JSON.parse(match[1]); } catch (error) { errors.push(`${name}: invalid JSON-LD (${error.message})`); }
