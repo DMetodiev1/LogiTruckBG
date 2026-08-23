@@ -1,0 +1,10 @@
+{
+  "name": "logitruck-marketing-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-content.mjs",
+    "validate": "node scripts/validate-site.mjs",
+    "check": "npm run build && npm run validate"
+  }
+}

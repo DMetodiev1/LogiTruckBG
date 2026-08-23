@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="LogiTruck събира курсове, автопарк, шофьори, CMR, фактури, разходи и печалба в една ясна логистична платформа."
+      content="Управлявайте курсове, автопарк, шофьори, документи, разходи, фактури и CMR с LogiTruck. Започнете с 1 месец безплатен тест."
     />
     <meta name="theme-color" content="#241144" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="bg_BG" />
     <meta property="og:site_name" content="LogiTruck" />
-    <meta property="og:title" content="LogiTruck — от курс до печалба" />
+    <meta property="og:title" content="Софтуер за управление на транспортна фирма | LogiTruck" />
     <meta
       property="og:description"
-      content="Управлявайте курсове, автопарк, документи и финанси без разпилени таблици и ръчна работа."
+      content="LogiTruck свързва курсове, автопарк, шофьори, документи, фактури, разходи и печалба в един работен процес."
     />
     <meta property="og:url" content="https://www.lumina-88.com/" />
     <meta
@@ -33,10 +33,10 @@
       content="LogiTruck — курсове, автопарк, шофьори, документи и финанси на едно място"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="LogiTruck — от курс до печалба" />
+    <meta name="twitter:title" content="Софтуер за управление на транспортна фирма | LogiTruck" />
     <meta
       name="twitter:description"
-      content="Управлявайте курсове, автопарк, документи и финанси без разпилени таблици и ръчна работа."
+      content="Курсове, автопарк, документи, фактури и печалба в една система."
     />
     <meta
       name="twitter:image"
@@ -58,22 +58,42 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css?v=20260721-2" />
-    <title>LogiTruck — логистиката от курс до печалба</title>
+    <link rel="stylesheet" href="/styles.css?v=20260823-1" />
+    <link rel="stylesheet" href="/content.css?v=20260823-1" />
+    <title>Софтуер за управление на транспортна фирма | LogiTruck</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "LogiTruck",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "url": "https://www.lumina-88.com/",
-        "image": "https://www.lumina-88.com/assets/social/logitruck-og-20260721.jpg",
-        "description": "Софтуер за управление на курсове, автопарк, шофьори, документи, фактури и транспортни финанси.",
-        "provider": {
-          "@type": "Organization",
-          "name": "ЛУМИНА 88 ЕООД"
-        }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.lumina-88.com/#organization",
+            "name": "ЛУМИНА 88 ЕООД",
+            "alternateName": "LogiTruck",
+            "url": "https://www.lumina-88.com/",
+            "logo": "https://www.lumina-88.com/logo%20black.svg",
+            "email": "metodiev@lumina-88.com",
+            "telephone": "+359892374768"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.lumina-88.com/#website",
+            "name": "LogiTruck",
+            "url": "https://www.lumina-88.com/",
+            "inLanguage": "bg-BG",
+            "publisher": { "@id": "https://www.lumina-88.com/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "LogiTruck",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.lumina-88.com/",
+            "image": "https://www.lumina-88.com/assets/social/logitruck-og-20260721.jpg",
+            "description": "Софтуер за управление на курсове, автопарк, шофьори, документи, фактури и транспортни финанси.",
+            "provider": { "@id": "https://www.lumina-88.com/#organization" }
+          }
+        ]
       }
     </script>
   </head>
@@ -99,16 +119,16 @@
         </button>
 
         <nav id="primary-navigation" class="primary-nav" aria-label="Основна навигация" data-menu>
-          <a href="#solutions">Решения</a>
-          <a href="#product">Продукт</a>
-          <a href="#how-it-works">Как работи</a>
+          <a href="/funkcii/upravlenie-na-kursove/">Функции</a>
+          <a href="/za-kogo/malki-transportni-firmi/">За кого</a>
+          <a href="/blog/">Ръководства</a>
           <a href="#roi">ROI калкулатор</a>
           <a href="#contact">Контакт</a>
         </nav>
 
         <div class="header-actions">
           <a class="text-link" href="https://logitruck.lumina-88.com/login">Вход</a>
-          <a class="button button-small button-primary" href="#route-demo">Безплатно демо</a>
+          <a class="button button-small button-primary" href="/bezplaten-test/" data-analytics-event="trial_cta_click">Безплатен тест</a>
         </div>
       </div>
     </header>
@@ -123,10 +143,10 @@
               <span class="eyebrow-dot"></span>
               Операционната система за транспортния бизнес
             </p>
-            <h1>От курс до печалба. <span>Всичко на едно място.</span></h1>
+            <h1>Софтуер за транспортна фирма. <span>От курс до печалба.</span></h1>
             <p class="hero-lead">
-              LogiTruck свързва диспечери, шофьори, автопарк, документи и финанси в
-              един работен поток — без разпилени таблици и пропуснати срокове.
+              LogiTruck събира курсове, автопарк, шофьори, документи, разходи,
+              фактури и CMR в един работен поток — без разпилени таблици.
             </p>
 
             <div class="hero-actions">
@@ -140,8 +160,8 @@
               </a>
             </div>
 
-            <ul class="hero-proof" aria-label="Основни предимства">
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> 14-дневен тест</li>
+            <ul class="hero-proof">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> 1 месец безплатен тест</li>
               <li><i class="fa-solid fa-check" aria-hidden="true"></i> Без банкова карта</li>
               <li><i class="fa-solid fa-check" aria-hidden="true"></i> Поддръжка на български</li>
             </ul>
@@ -415,14 +435,14 @@
             <h2 id="features-title">Една платформа за целия транспортен цикъл</h2>
           </div>
           <div class="feature-grid">
-            <article class="feature-card reveal"><span><i class="fa-solid fa-route"></i></span><h3>Курсове</h3><p>Планиране, календар, статуси и пълна хронология.</p><a href="#how-it-works">Виж процеса <i class="fa-solid fa-arrow-right"></i></a></article>
-            <article class="feature-card reveal" data-delay="50"><span><i class="fa-solid fa-truck-front"></i></span><h3>Автопарк</h3><p>Камиони, ремаркета, километри и документи.</p><a href="#product">Виж интерфейса <i class="fa-solid fa-arrow-right"></i></a></article>
-            <article class="feature-card reveal" data-delay="100"><span><i class="fa-regular fa-id-card"></i></span><h3>Шофьори</h3><p>Заетост, категории, срокове и препоръки.</p><a href="#solutions">Виж решението <i class="fa-solid fa-arrow-right"></i></a></article>
-            <article class="feature-card reveal" data-delay="150"><span><i class="fa-solid fa-file-signature"></i></span><h3>CMR</h3><p>Автоматично генериране от данните на курса.</p><a href="#workflow-title">Виж автоматизацията <i class="fa-solid fa-arrow-right"></i></a></article>
-            <article class="feature-card reveal"><span><i class="fa-solid fa-file-invoice-dollar"></i></span><h3>OCR фактури</h3><p>Разпознаване, проверка и връзка с конкретен курс.</p><a href="#product">Виж фактурите <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal"><span><i class="fa-solid fa-route"></i></span><h3>Курсове</h3><p>Планиране, календар, статуси и пълна хронология.</p><a href="/funkcii/upravlenie-na-kursove/">Виж процеса <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="50"><span><i class="fa-solid fa-truck-front"></i></span><h3>Автопарк</h3><p>Камиони, ремаркета, километри и документи.</p><a href="/funkcii/upravlenie-na-avtopark/">Управление на автопарк <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="100"><span><i class="fa-regular fa-id-card"></i></span><h3>Шофьори</h3><p>Заетост, категории, срокове и препоръки.</p><a href="/funkcii/shofyori-i-dokumenti/">Шофьори и документи <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="150"><span><i class="fa-solid fa-file-signature"></i></span><h3>CMR</h3><p>Генериране с преглед от данните на курса.</p><a href="/funkcii/cmr/">Създаване на CMR <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal"><span><i class="fa-solid fa-file-invoice-dollar"></i></span><h3>OCR фактури</h3><p>Разпознаване, проверка и връзка с конкретен курс.</p><a href="/funkcii/fakturi-i-plashtania/">Фактури и плащания <i class="fa-solid fa-arrow-right"></i></a></article>
             <article class="feature-card reveal" data-delay="50"><span><i class="fa-solid fa-wallet"></i></span><h3>Заплати</h3><p>Автоматично изчисление и история на плащанията.</p><a href="#roi">Изчисли ефекта <i class="fa-solid fa-arrow-right"></i></a></article>
             <article class="feature-card reveal" data-delay="100"><span><i class="fa-solid fa-address-book"></i></span><h3>Клиенти</h3><p>CRM с контакти, маршрути, курсове и документи.</p><a href="#product">Виж продукта <i class="fa-solid fa-arrow-right"></i></a></article>
-            <article class="feature-card reveal" data-delay="150"><span><i class="fa-solid fa-chart-line"></i></span><h3>Финанси</h3><p>Приход, разход, марж и печалба по всеки курс.</p><a href="#roi">ROI калкулатор <i class="fa-solid fa-arrow-right"></i></a></article>
+            <article class="feature-card reveal" data-delay="150"><span><i class="fa-solid fa-chart-line"></i></span><h3>Финанси</h3><p>Приход, разход, марж и печалба по всеки курс.</p><a href="/funkcii/razhodi-i-pechalba/">Разходи и печалба <i class="fa-solid fa-arrow-right"></i></a></article>
           </div>
         </div>
       </section>
@@ -593,7 +613,7 @@
             <p class="eyebrow">Защо LogiTruck?</p>
             <h2 id="why-title">Един източник на истина за целия транспортен екип</h2>
             <p>Диспечерът, управителят и счетоводството виждат една и съща актуална информация.</p>
-            <a class="button button-primary" href="https://logitruck.lumina-88.com/register">Започни 14-дневен тест</a>
+            <a class="button button-primary" href="/bezplaten-test/" data-analytics-event="trial_cta_click">Започни 1 месец безплатен тест</a>
           </div>
           <ul class="why-list reveal" data-delay="100">
             <li><i class="fa-solid fa-user-check"></i><span><strong>Избира най-подходящия шофьор</strong><small>Наличност, категории, документи и заетост.</small></span></li>
@@ -615,7 +635,7 @@
             <h2 id="contact-title">Покажете ни как работите днес.<br />Ще ви покажем по-краткия път.</h2>
             <p>30 минути, реален сценарий от вашия бизнес и конкретен план за внедряване.</p>
             <div class="contact-details">
-              <a href="tel:+359892374768"><i class="fa-solid fa-phone"></i><span><small>Телефон</small>+359&nbsp;892&nbsp;374&nbsp;768</span></a>
+              <a href="tel:+359892374768" data-analytics-event="phone_click"><i class="fa-solid fa-phone"></i><span><small>Телефон</small>+359&nbsp;892&nbsp;374&nbsp;768</span></a>
               <a href="mailto:metodiev@lumina-88.com"><i class="fa-solid fa-envelope"></i><span><small>Имейл</small>metodiev@lumina-88.com</span></a>
             </div>
           </div>
@@ -643,9 +663,9 @@
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div class="footer-brand"><a class="brand brand-light" href="#top"><img src="logo white.svg" alt="" width="46" height="42" /><span>LogiTruck</span></a><p>Логистиката от курс до печалба.</p></div>
-        <div><h2>Продукт</h2><a href="#features">Функции</a><a href="#product">Интерфейс</a><a href="#how-it-works">Как работи</a><a href="#roi">ROI калкулатор</a></div>
-        <div><h2>Достъп</h2><a href="https://logitruck.lumina-88.com/login">Вход</a><a href="https://logitruck.lumina-88.com/register">Регистрация</a><a href="#contact">Демонстрация</a></div>
-        <div><h2>Контакт</h2><a href="mailto:metodiev@lumina-88.com">metodiev@lumina-88.com</a><a href="tel:+359892374768">+359&nbsp;892&nbsp;374&nbsp;768</a><span>Тутракан, България</span></div>
+        <div><h2>Продукт</h2><a href="/funkcii/upravlenie-na-kursove/">Курсове</a><a href="/funkcii/upravlenie-na-avtopark/">Автопарк</a><a href="/funkcii/fakturi-i-plashtania/">Фактури</a><a href="/funkcii/cmr/">CMR</a></div>
+        <div><h2>Ресурси</h2><a href="/blog/">Ръководства</a><a href="/za-kogo/malki-transportni-firmi/">За малки фирми</a><a href="/bezplaten-test/">Безплатен тест</a><button class="footer-link-button" type="button" data-cookie-settings>Настройки за бисквитки</button></div>
+        <div><h2>Контакт</h2><a href="mailto:metodiev@lumina-88.com">metodiev@lumina-88.com</a><a href="tel:+359892374768" data-analytics-event="phone_click">+359&nbsp;892&nbsp;374&nbsp;768</a><span>Тутракан, България</span></div>
       </div>
       <div class="shell footer-bottom"><p>© 2026 „ЛУМИНА 88“ ЕООД. Всички права запазени.</p><div><a href="https://logitruck.lumina-88.com/terms-of-use">Условия</a><a href="https://logitruck.lumina-88.com/privacy-policy">Поверителност</a></div></div>
     </footer>
@@ -655,6 +675,7 @@
       <strong>Изпробвай LogiTruck<small>Без регистрация</small></strong>
     </a>
 
-    <script src="script.js?v=20260721-2" defer></script>
+    <script src="/analytics.js?v=20260823-1" defer></script>
+    <script src="/script.js?v=20260823-1" defer></script>
   </body>
 </html>
