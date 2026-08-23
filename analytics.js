@@ -50,9 +50,9 @@
   const dialog = document.createElement("div");
   dialog.className = "cookie-dialog";
   dialog.hidden = true;
-  dialog.innerHTML = `<section class="cookie-panel" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-    <h2 id="cookie-title">Помогнете ни да подобрим LogiTruck</h2>
-    <p>Използваме незадължителни аналитични бисквитки само след вашето съгласие. Те ни помагат да разберем кои публични страници и действия са полезни. Можете да промените избора си от връзката в долната част на сайта.</p>
+  dialog.innerHTML = `<section class="cookie-panel" role="dialog" aria-labelledby="cookie-title">
+    <div class="cookie-copy"><h2 id="cookie-title">Аналитични бисквитки</h2>
+    <p>Използваме ги само с ваше съгласие. Можете да промените избора си от настройките.</p></div>
     <div class="cookie-actions"><button type="button" data-cookie-deny>Отказвам</button><button class="accept" type="button" data-cookie-accept>Приемам аналитичните</button></div>
   </section>`;
   document.body.append(dialog);
@@ -61,10 +61,14 @@
   const openDialog = () => {
     lastFocused = document.activeElement;
     dialog.hidden = false;
-    dialog.querySelector("button")?.focus();
+    requestAnimationFrame(() => {
+      dialog.classList.add("is-open");
+      dialog.querySelector("button")?.focus({ preventScroll: true });
+    });
   };
   const closeDialog = () => {
-    dialog.hidden = true;
+    dialog.classList.remove("is-open");
+    window.setTimeout(() => { dialog.hidden = true; }, 180);
     lastFocused?.focus?.();
   };
   const choose = (value) => {

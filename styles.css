@@ -138,6 +138,12 @@ h4 {
   background: var(--purple-950);
 }
 
+main > section:not(.hero),
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 .eyebrow {
   display: flex;
   align-items: center;
@@ -1339,10 +1345,13 @@ h4 {
 
 .workflow-progress span {
   display: block;
-  width: 0;
+  width: 100%;
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--purple-500), var(--orange));
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
 }
 
 .workflow-progress span.is-running {
@@ -1615,6 +1624,7 @@ h4 {
   margin-left: auto;
   padding: 4px 36px;
   border-radius: 999px;
+  color: #675f73;
   background: #f6f4f8;
 }
 
@@ -2378,7 +2388,7 @@ h4 {
 }
 
 .footer-brand p {
-  color: rgb(255 255 255 / 43%);
+  color: rgb(255 255 255 / 72%);
   font-size: 13px;
 }
 
@@ -2399,7 +2409,7 @@ h4 {
 .footer-grid a,
 .footer-grid span {
   width: fit-content;
-  color: rgb(255 255 255 / 48%);
+  color: rgb(255 255 255 / 76%);
   font-size: 12px;
   transition: color 160ms ease;
 }
@@ -2415,7 +2425,7 @@ h4 {
   gap: 20px;
   padding-top: 22px;
   border-top: 1px solid rgb(255 255 255 / 8%);
-  color: rgb(255 255 255 / 35%);
+  color: rgb(255 255 255 / 68%);
   font-size: 10px;
 }
 
@@ -2499,8 +2509,8 @@ h4 {
 }
 
 @keyframes workflowProgress {
-  from { width: 0; }
-  to { width: 100%; }
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 @keyframes barGlow {
