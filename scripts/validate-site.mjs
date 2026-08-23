@@ -45,6 +45,7 @@ for (const path of htmlFiles) {
   }
   if (/14-днев|GPS проследяване|Повышение|директно в вашия/.test(source)) errors.push(`${name}: contains stale or unsupported claim`);
   if (/<a class="related-card"[^>]*><strong>\//.test(source)) errors.push(`${name}: related card exposes a raw URL as its title`);
+  if (/<a(?![^>]*href="https:\/\/logitruck\.lumina-88\.com\/register")[^>]*>Безплатен тест<\/a>/.test(source)) errors.push(`${name}: exact trial link does not target registration`);
 
   for (const match of source.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)) {
     try { JSON.parse(match[1]); } catch (error) { errors.push(`${name}: invalid JSON-LD (${error.message})`); }
