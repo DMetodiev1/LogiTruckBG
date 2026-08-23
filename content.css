@@ -124,12 +124,14 @@
 .footer-link-button:hover { color: #fff; }
 
 .cookie-dialog[hidden] { display: none; }
-.cookie-dialog { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: end center; padding: 1rem; background: rgb(20 10 42 / 55%); }
-.cookie-panel { width: min(44rem, 100%); padding: 1.5rem; border: 1px solid #e5dff0; border-radius: 1.25rem; background: #fff; box-shadow: 0 2rem 6rem rgb(20 10 42 / 30%); }
-.cookie-panel h2 { margin: 0; color: #241144; font-size: 1.35rem; }
-.cookie-panel p { margin: .75rem 0 0; color: #556070; line-height: 1.6; }
-.cookie-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .7rem; margin-top: 1.2rem; }
-.cookie-actions button { min-height: 2.8rem; padding: .65rem 1rem; border: 1px solid #d7cee5; border-radius: .75rem; background: #fff; color: #432476; font-weight: 800; cursor: pointer; }
+.cookie-dialog { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: end center; padding: .75rem; background: transparent; opacity: 0; pointer-events: none; transition: opacity 180ms ease; }
+.cookie-dialog.is-open { opacity: 1; pointer-events: auto; }
+.cookie-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; width: min(52rem, 100%); padding: 1rem 1.1rem; border: 1px solid #e5dff0; border-radius: 1rem; background: #fff; box-shadow: 0 1rem 3rem rgb(20 10 42 / 24%); transform: translateY(calc(100% + 2rem)); transition: transform 180ms ease; }
+.cookie-dialog.is-open .cookie-panel { transform: translateY(0); }
+.cookie-panel h2 { margin: 0; color: #241144; font-size: 1rem; }
+.cookie-panel p { margin: .2rem 0 0; color: #465162; font-size: .8rem; line-height: 1.45; }
+.cookie-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .55rem; margin: 0; }
+.cookie-actions button { min-height: 2.5rem; padding: .55rem .8rem; border: 1px solid #d7cee5; border-radius: .7rem; background: #fff; color: #432476; font-size: .8rem; font-weight: 800; cursor: pointer; }
 .cookie-actions .accept { border-color: #553195; color: #fff; background: #553195; }
 
 @media (max-width: 900px) {
@@ -144,5 +146,6 @@
   .content-hero .hero-actions { align-items: stretch; }
   .content-hero .hero-actions .button { width: 100%; }
   .check-grid, .article-grid { grid-template-columns: 1fr; }
-  .cookie-actions { display: grid; grid-template-columns: 1fr; }
+  .cookie-panel { grid-template-columns: 1fr; gap: .75rem; }
+  .cookie-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

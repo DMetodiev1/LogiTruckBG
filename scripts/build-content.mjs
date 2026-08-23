@@ -293,15 +293,14 @@ function documentShell({ title, description, path, body, schema, type = "website
   <link rel="canonical" href="${canonical}">
   <meta property="og:type" content="${type}"><meta property="og:locale" content="bg_BG"><meta property="og:site_name" content="LogiTruck"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${canonicalOrigin}/assets/screens/dashboard-demo.png">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${canonicalOrigin}/assets/screens/dashboard-demo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="/styles.css?v=20260823-1"><link rel="stylesheet" href="/content.css?v=20260823-1">
+  <link rel="stylesheet" href="/styles.css?v=20260823-2"><link rel="stylesheet" href="/content.css?v=20260823-2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
   <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replaceAll("<", "\\u003c")}</script>
 </head><body>
   <a class="skip-link" href="#main-content">Към основното съдържание</a>${header()}
   <main id="main-content">${body}</main>${footer()}
-  <script src="/analytics.js?v=20260823-1" defer></script><script src="/content.js?v=20260823-1" defer></script>
+  <script src="/analytics.js?v=20260823-2" defer></script><script src="/content.js?v=20260823-2" defer></script>
 </body></html>`;
 }
 
