@@ -243,7 +243,7 @@ const workflowItems = [
   {
     status: "Документът е разпознат",
     icon: "fa-file-invoice",
-    title: "OCR прочете разходната фактура",
+    title: "AI сканира разходната фактура",
     description: "Номер, доставчик, дата и сума са свързани с курса.",
     cost: "795 €",
     profit: "—",

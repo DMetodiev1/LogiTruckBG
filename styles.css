@@ -582,6 +582,7 @@ main > section:not(.hero),
 .route-form label,
 .contact-form label {
   display: grid;
+  min-width: 0;
   gap: 6px;
   color: #4c4558;
   font-size: 11px;
@@ -591,6 +592,7 @@ main > section:not(.hero),
 .input-shell {
   position: relative;
   display: block;
+  min-width: 0;
 }
 
 .input-shell > i {
@@ -619,10 +621,17 @@ main > section:not(.hero),
 
 .route-form select,
 .route-form input {
+  min-width: 0;
+  max-width: 100%;
   height: 44px;
   padding: 0 11px 0 35px;
   font-size: 12px;
   font-weight: 700;
+}
+
+.route-form input[type="date"] {
+  display: block;
+  inline-size: 100%;
 }
 
 .route-form select:focus,
