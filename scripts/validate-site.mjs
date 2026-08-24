@@ -44,6 +44,7 @@ for (const path of htmlFiles) {
     titles.set(title, name);
   }
   if (/14-днев|GPS проследяване|Повышение|директно в вашия/.test(source)) errors.push(`${name}: contains stale or unsupported claim`);
+  if (/\bOCR\b/i.test(source)) errors.push(`${name}: contains outdated OCR wording`);
   if (/<a class="related-card"[^>]*><strong>\//.test(source)) errors.push(`${name}: related card exposes a raw URL as its title`);
   if (/<a(?![^>]*href="https:\/\/logitruck\.lumina-88\.com\/register")[^>]*>Безплатен тест<\/a>/.test(source)) errors.push(`${name}: exact trial link does not target registration`);
 
