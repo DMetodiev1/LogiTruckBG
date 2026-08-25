@@ -49,8 +49,8 @@
     <link rel="canonical" href="https://www.lumina-88.com/" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <style data-home-css>:root{--ink:#151124;--surface:#fff;--purple-900:#241144;--header-height:76px}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--surface);font-family:Manrope,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif}.site-header{height:var(--header-height);background:#fff}.hero{min-height:100svh;background:#241144}</style>
-    <link data-home-bundle rel="preload" href="/assets/build/styles.min.css?v=20260825-1" as="style" />
-    <link data-home-bundle rel="stylesheet" href="/assets/build/styles.min.css?v=20260825-1" />
+    <link data-home-bundle rel="preload" href="/assets/build/styles.min.css?v=20260825-2" as="style" />
+    <link data-home-bundle rel="stylesheet" href="/assets/build/styles.min.css?v=20260825-2" />
     <link data-home-bundle rel="stylesheet" href="/assets/build/content.min.css?v=20260825-1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /></noscript>
@@ -123,6 +123,14 @@
         </nav>
 
         <div class="header-actions">
+          <label class="language-selector">
+            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+            <span class="sr-only">Език</span>
+            <select data-language-select aria-label="Избор на език">
+              <option value="bg">BG</option>
+              <option value="en">EN</option>
+            </select>
+          </label>
           <a class="text-link" href="https://logitruck.lumina-88.com/login">Вход</a>
           <a class="button button-small button-primary" href="https://logitruck.lumina-88.com/register" data-analytics-event="registration_click">Безплатен тест</a>
         </div>
@@ -414,12 +422,12 @@
           </div>
 
           <div class="updates-grid">
-            <article class="update-card reveal"><span class="new-badge">NEW</span><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i><div><h3>AI сканиране на фактури</h3><p>Извлича ключовите данни и ги подготвя за вашия финален преглед.</p></div></article>
-            <article class="update-card reveal" data-delay="60"><span class="new-badge">NEW</span><i class="fa-solid fa-file-signature" aria-hidden="true"></i><div><h3>Automatic CMR</h3><p>Генерира CMR директно от данните на курса.</p></div></article>
-            <article class="update-card reveal" data-delay="120"><span class="new-badge">NEW</span><i class="fa-solid fa-money-check-dollar" aria-hidden="true"></i><div><h3>Driver Payroll</h3><p>Изчислява възнаграждения и плащания към шофьори.</p></div></article>
-            <article class="update-card reveal"><span class="new-badge">NEW</span><i class="fa-solid fa-users" aria-hidden="true"></i><div><h3>Customer CRM</h3><p>Клиенти, контакти, маршрути и фактури в един профил.</p></div></article>
-            <article class="update-card reveal" data-delay="60"><span class="new-badge">NEW</span><i class="fa-solid fa-user-check" aria-hidden="true"></i><div><h3>Smart Recommendation</h3><p>Подрежда най-подходящите шофьори за всеки курс.</p></div></article>
-            <article class="update-card reveal" data-delay="120"><span class="new-badge">NEW</span><i class="fa-solid fa-chart-column" aria-hidden="true"></i><div><h3>Financial Control</h3><p>Свързва приходите и разходите с реалния курс.</p></div></article>
+            <article class="update-card reveal"><span class="new-badge">НОВО</span><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i><div><h3>AI сканиране на фактури</h3><p>Извлича ключовите данни и ги подготвя за вашия финален преглед.</p></div></article>
+            <article class="update-card reveal" data-delay="60"><span class="new-badge">НОВО</span><i class="fa-solid fa-file-signature" aria-hidden="true"></i><div><h3>Автоматично CMR</h3><p>Генерира CMR директно от данните на курса.</p></div></article>
+            <article class="update-card reveal" data-delay="120"><span class="new-badge">НОВО</span><i class="fa-solid fa-money-check-dollar" aria-hidden="true"></i><div><h3>Заплати на шофьори</h3><p>Изчислява възнаграждения и плащания към шофьори.</p></div></article>
+            <article class="update-card reveal"><span class="new-badge">НОВО</span><i class="fa-solid fa-users" aria-hidden="true"></i><div><h3>Управление на клиенти</h3><p>Клиенти, контакти, маршрути и фактури в един профил.</p></div></article>
+            <article class="update-card reveal" data-delay="60"><span class="new-badge">НОВО</span><i class="fa-solid fa-user-check" aria-hidden="true"></i><div><h3>Интелигентен подбор</h3><p>Подрежда най-подходящите шофьори за всеки курс.</p></div></article>
+            <article class="update-card reveal" data-delay="120"><span class="new-badge">НОВО</span><i class="fa-solid fa-chart-column" aria-hidden="true"></i><div><h3>Финансов контрол</h3><p>Свързва приходите и разходите с реалния курс.</p></div></article>
           </div>
         </div>
       </section>
@@ -671,7 +679,8 @@
       <strong>Изпробвай LogiTruck<small>Без регистрация</small></strong>
     </a>
 
+    <script src="/assets/build/language.min.js?v=20260825-1" defer></script>
     <script src="/assets/build/analytics.min.js?v=20260825-1" defer></script>
-    <script src="/assets/build/script.min.js?v=20260825-1" defer></script>
+    <script src="/assets/build/script.min.js?v=20260825-2" defer></script>
   </body>
 </html>

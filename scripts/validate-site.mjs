@@ -49,7 +49,7 @@ for (const path of htmlFiles) {
   if (/<a class="related-card"[^>]*><strong>\//.test(source)) errors.push(`${name}: related card exposes a raw URL as its title`);
   if (/<a(?![^>]*href="https:\/\/logitruck\.lumina-88\.com\/register")[^>]*>Безплатен тест<\/a>/.test(source)) errors.push(`${name}: exact trial link does not target registration`);
 
-  const unminifiedAssets = [...source.matchAll(/(?:href|src)="\/(styles\.css|content\.css|analytics\.js|script\.js|content\.js)(?:\?[^\"]*)?"/g)];
+  const unminifiedAssets = [...source.matchAll(/(?:href|src)="\/(styles\.css|content\.css|analytics\.js|language\.js|script\.js|content\.js)(?:\?[^\"]*)?"/g)];
   if (unminifiedAssets.length) errors.push(`${name}: references unminified first-party assets (${unminifiedAssets.map((match) => match[1]).join(", ")})`);
 
   if (name === "index.html") {
@@ -74,6 +74,7 @@ const assetPairs = [
   ["styles.css", "assets/build/styles.min.css"],
   ["content.css", "assets/build/content.min.css"],
   ["analytics.js", "assets/build/analytics.min.js"],
+  ["language.js", "assets/build/language.min.js"],
   ["script.js", "assets/build/script.min.js"],
   ["content.js", "assets/build/content.min.js"],
 ];

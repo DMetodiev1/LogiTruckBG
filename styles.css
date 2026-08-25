@@ -37,7 +37,7 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--surface);
+  background: #fbf9ff;
   font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -270,11 +270,16 @@ main > section:not(.hero),
 .button-accent {
   color: #21132f;
   background: linear-gradient(135deg, #ffd66f, var(--orange));
-  box-shadow: 0 14px 35px rgb(255 189 61 / 24%);
+  box-shadow: 0 5px 0 #dfa62f, 0 16px 34px rgb(255 189 61 / 22%);
 }
 
 .button-accent:hover {
-  box-shadow: 0 20px 42px rgb(255 189 61 / 32%);
+  box-shadow: 0 7px 0 #d99f28, 0 22px 42px rgb(255 189 61 / 30%);
+}
+
+.button-accent:active {
+  box-shadow: 0 2px 0 #d99f28, 0 9px 20px rgb(255 189 61 / 22%);
+  transform: translateY(3px);
 }
 
 .button-ghost {
@@ -381,6 +386,41 @@ main > section:not(.hero),
   display: flex;
   align-items: center;
   gap: 18px;
+}
+
+.language-selector {
+  position: relative;
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 9px 0 11px;
+  border: 1px solid #ded5ee;
+  border-radius: 11px;
+  color: var(--purple-700);
+  background: linear-gradient(180deg, #fff, #f6f1ff);
+  box-shadow: 0 4px 0 rgb(79 47 143 / 12%), 0 10px 24px rgb(36 17 68 / 8%);
+}
+
+.language-selector i {
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.language-selector select {
+  padding: 0 20px 0 0;
+  border: 0;
+  outline: 0;
+  color: var(--purple-800);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.language-selector:focus-within {
+  border-color: var(--purple-500);
+  box-shadow: 0 4px 0 rgb(79 47 143 / 16%), 0 0 0 4px rgb(146 92 242 / 10%);
 }
 
 .menu-toggle {
@@ -1408,7 +1448,9 @@ main > section:not(.hero),
 }
 
 .updates-section {
-  background: #fff;
+  background:
+    radial-gradient(circle at 12% 18%, rgb(146 92 242 / 8%), transparent 25rem),
+    linear-gradient(180deg, #fff 0%, #faf7ff 52%, #f7f2ff 100%);
 }
 
 .updates-grid {
@@ -1427,14 +1469,15 @@ main > section:not(.hero),
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: #fff;
+  background: linear-gradient(155deg, #fff 0%, #fff 62%, #faf7ff 100%);
+  box-shadow: 0 5px 0 rgb(79 47 143 / 7%), 0 18px 38px rgb(36 17 68 / 7%);
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .update-card:hover {
   border-color: var(--purple-300);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-4px);
+  box-shadow: 0 7px 0 rgb(79 47 143 / 10%), 0 24px 46px rgb(36 17 68 / 11%);
+  transform: translateY(-3px);
 }
 
 .update-card > i {
@@ -2995,6 +3038,19 @@ main > section:not(.hero),
   }
 
   .header-actions .button {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .language-selector {
+    height: 38px;
+    padding-inline: 9px 7px;
+  }
+
+  .language-selector i {
     display: none;
   }
 
