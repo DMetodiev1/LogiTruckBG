@@ -3,8 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-content.mjs && node scripts/inline-home-css.mjs",
+    "build": "node scripts/build-content.mjs && node scripts/build-assets.mjs && node scripts/inline-home-css.mjs",
     "validate": "node scripts/validate-site.mjs",
     "check": "npm run build && npm run validate"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.9"
   }
 }

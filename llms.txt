@@ -1,0 +1,24 @@
+# LogiTruck
+
+> Български уеб софтуер за управление на транспортни фирми, курсове, автопарк, шофьори, документи, разходи, фактури и CMR.
+
+Официален сайт: https://www.lumina-88.com/
+
+## Продукт
+
+- [Управление на курсове](https://www.lumina-88.com/funkcii/upravlenie-na-kursove/): Планиране, проследяване и приключване на транспортни курсове.
+- [Управление на автопарк](https://www.lumina-88.com/funkcii/upravlenie-na-avtopark/): Камиони, ремаркета, документи, категории и заетост.
+- [Шофьори](https://www.lumina-88.com/funkcii/shofyori-i-dokumenti/): Данни, документи и ангажираност на водачите.
+- [Фактури и плащания](https://www.lumina-88.com/funkcii/fakturi-i-plashtania/): Фактуриране и проследяване на плащанията.
+- [CMR](https://www.lumina-88.com/funkcii/cmr/): Създаване и управление на CMR документи.
+
+## Ресурси
+
+- [Ръководства](https://www.lumina-88.com/blog/): Практически материали за транспортни фирми.
+- [Безплатен тест](https://www.lumina-88.com/bezplaten-test/): Условия и стъпки за едномесечния тестов период.
+- [За малки транспортни фирми](https://www.lumina-88.com/za-kogo/malki-transportni-firmi/): Приложение на LogiTruck при малки автопаркове.
+
+## Контакт
+
+- Имейл: metodiev@lumina-88.com
+- Телефон: +359 892 374 768
