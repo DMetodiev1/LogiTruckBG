@@ -296,14 +296,14 @@ function documentShell({ title, description, path, body, schema, type = "website
   <link rel="canonical" href="${canonical}">
   <meta property="og:type" content="${type}"><meta property="og:locale" content="bg_BG"><meta property="og:site_name" content="LogiTruck"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${canonicalOrigin}/assets/screens/dashboard-demo.png">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${canonicalOrigin}/assets/screens/dashboard-demo.png">
-  <link rel="stylesheet" href="/styles.css?v=20260823-3"><link rel="stylesheet" href="/content.css?v=20260823-3">
+  <link rel="stylesheet" href="/assets/build/styles.min.css?v=20260825-1"><link rel="stylesheet" href="/assets/build/content.min.css?v=20260825-1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
   <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replaceAll("<", "\\u003c")}</script>
 </head><body>
   <a class="skip-link" href="#main-content">Към основното съдържание</a>${header()}
   <main id="main-content">${body}</main>${footer()}
-  <script src="/analytics.js?v=20260823-2" defer></script><script src="/content.js?v=20260823-2" defer></script>
+  <script src="/assets/build/analytics.min.js?v=20260825-1" defer></script><script src="/assets/build/content.min.js?v=20260825-1" defer></script>
 </body></html>`;
 }
 
@@ -322,7 +322,7 @@ function featureHtml(page) {
   const canonical = `${canonicalOrigin}${page.path}`;
   const schema = [
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Начало", item: `${canonicalOrigin}/` }, { "@type": "ListItem", position: 2, name: page.path.startsWith("/za-kogo/") ? "За кого" : "Функции", item: page.path.startsWith("/za-kogo/") ? `${canonicalOrigin}/za-kogo/malki-transportni-firmi/` : `${canonicalOrigin}/funkcii/upravlenie-na-kursove/` }, { "@type": "ListItem", position: 3, name: page.h1, item: canonical }] },
-    { "@type": "SoftwareApplication", name: "LogiTruck", applicationCategory: "BusinessApplication", operatingSystem: "Web", url: canonical, description: page.description, provider: { "@id": `${canonicalOrigin}/#organization` } },
+    { "@type": "Service", "@id": `${canonical}#service`, name: page.h1, serviceType: "Уеб софтуер за управление на транспортна фирма", url: canonical, description: page.description, provider: { "@id": `${canonicalOrigin}/#organization` }, areaServed: { "@type": "Country", name: "България" }, audience: { "@type": "BusinessAudience", audienceType: "Транспортни фирми" } },
   ];
   const body = `<section class="content-hero"><div class="shell">${breadcrumbs([], page.eyebrow)}<div class="content-hero-grid"><div><p class="eyebrow eyebrow-light">${esc(page.eyebrow)}</p><h1>${esc(page.h1)}</h1><p class="content-lead">${esc(page.lead)}</p><div class="hero-actions"><a class="button button-accent" href="${appOrigin}/register" data-analytics-event="registration_click">Започнете 1 месец безплатен тест</a><a class="button button-ghost" href="tel:+359892374768" data-analytics-event="phone_click">Обадете се: 0892 374 768</a></div></div><div class="content-hero-panel"><span class="content-icon"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></span><strong>Един свързан работен процес</strong><p>Данните се въвеждат веднъж и остават към реалния курс, ресурс или документ.</p></div></div></div></section>
   <section class="content-section"><div class="shell narrow"><p class="eyebrow">Проблемът</p><h2>По-малко ръчно прехвърляне. Повече ясна информация.</h2><p class="section-intro">${esc(page.problem)}</p></div><div class="shell card-grid">${page.benefits.map(([title, text], index) => `<article class="benefit-card"><span>0${index + 1}</span><h3>${esc(title)}</h3><p>${esc(text)}</p></article>`).join("")}</div></section>

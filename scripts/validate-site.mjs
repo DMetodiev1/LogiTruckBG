@@ -1,4 +1,4 @@
-import { readFile, readdir } from "node:fs/promises";
+import { readFile, readdir, stat } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -45,8 +45,17 @@ for (const path of htmlFiles) {
   }
   if (/14-днев|GPS проследяване|Повышение|директно в вашия/.test(source)) errors.push(`${name}: contains stale or unsupported claim`);
   if (/\bOCR\b/i.test(source)) errors.push(`${name}: contains outdated OCR wording`);
+  if (/"@type"\s*:\s*"SoftwareApplication"/.test(source)) errors.push(`${name}: contains SoftwareApplication markup without required commercial/review data`);
   if (/<a class="related-card"[^>]*><strong>\//.test(source)) errors.push(`${name}: related card exposes a raw URL as its title`);
   if (/<a(?![^>]*href="https:\/\/logitruck\.lumina-88\.com\/register")[^>]*>Безплатен тест<\/a>/.test(source)) errors.push(`${name}: exact trial link does not target registration`);
+
+  const unminifiedAssets = [...source.matchAll(/(?:href|src)="\/(styles\.css|content\.css|analytics\.js|script\.js|content\.js)(?:\?[^\"]*)?"/g)];
+  if (unminifiedAssets.length) errors.push(`${name}: references unminified first-party assets (${unminifiedAssets.map((match) => match[1]).join(", ")})`);
+
+  if (name === "index.html") {
+    const inlineHomeCss = source.match(/<style data-home-css>([\s\S]*?)<\/style>/)?.[1] ?? "";
+    if (Buffer.byteLength(inlineHomeCss) > 4096) errors.push(`${name}: critical inline CSS exceeds 4 KiB`);
+  }
 
   for (const match of source.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)) {
     try { JSON.parse(match[1]); } catch (error) { errors.push(`${name}: invalid JSON-LD (${error.message})`); }
@@ -59,6 +68,38 @@ for (const path of htmlFiles) {
     const normalized = url.pathname === "/" || url.pathname.endsWith("/") ? url.pathname : `${url.pathname}/`;
     if (!localPages.has(normalized)) errors.push(`${name}: broken internal link ${href}`);
   }
+}
+
+const assetPairs = [
+  ["styles.css", "assets/build/styles.min.css"],
+  ["content.css", "assets/build/content.min.css"],
+  ["analytics.js", "assets/build/analytics.min.js"],
+  ["script.js", "assets/build/script.min.js"],
+  ["content.js", "assets/build/content.min.js"],
+];
+for (const [sourceName, builtName] of assetPairs) {
+  try {
+    const sourceSize = (await stat(join(root, sourceName))).size;
+    const builtSize = (await stat(join(root, builtName))).size;
+    if (builtSize === 0) errors.push(`${builtName}: generated minified asset is empty`);
+    if (sourceSize >= 1024 && builtSize >= sourceSize) errors.push(`${builtName}: minified asset is not smaller than ${sourceName}`);
+  } catch {
+    errors.push(`${builtName}: missing generated minified asset`);
+  }
+}
+
+try {
+  const llms = await readFile(join(root, "llms.txt"), "utf8");
+  if (!llms.startsWith("# LogiTruck\n")) errors.push("llms.txt: missing LogiTruck H1");
+  for (const match of llms.matchAll(/https:\/\/www\.lumina-88\.com(\/[^\s)]*)/g)) {
+    const pathname = new URL(match[0]).pathname;
+    if (pathname === "/") continue;
+    const normalized = pathname.endsWith("/") ? pathname : `${pathname}/`;
+    if (!localPages.has(normalized)) errors.push(`llms.txt: broken public page ${match[0]}`);
+  }
+  if (/dashboard|logitruck\.lumina-88\.com/i.test(llms)) errors.push("llms.txt: must not expose private application routes");
+} catch {
+  errors.push("llms.txt: missing file");
 }
 
 const sitemap = await readFile(join(root, "sitemap.xml"), "utf8");
