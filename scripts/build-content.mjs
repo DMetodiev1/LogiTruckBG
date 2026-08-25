@@ -255,12 +255,12 @@ function esc(value) {
 function header() {
   return `<header class="site-header content-header" data-header>
     <div class="shell header-inner">
-      <a class="brand" href="/" aria-label="LogiTruck — начало"><img src="/logo black.svg" alt="" width="46" height="42"><span>LogiTruck</span></a>
+      <a class="brand" href="/" aria-label="LogiTruck — начало"><span class="brand-mark" aria-hidden="true"><img src="/logo white.svg" alt="" width="46" height="42"></span><span>LogiTruck</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Отвори менюто" data-menu-toggle><span></span><span></span><span></span></button>
       <nav id="primary-navigation" class="primary-nav" aria-label="Основна навигация" data-menu>
         <a href="/funkcii/upravlenie-na-kursove/">Функции</a><a href="/za-kogo/malki-transportni-firmi/">За кого</a><a href="/blog/">Ръководства</a><a href="/#roi">Калкулатор</a>
       </nav>
-      <div class="header-actions"><a class="text-link" href="${appOrigin}/login">Вход</a><a class="button button-small button-primary" href="${appOrigin}/register" data-analytics-event="registration_click">Безплатен тест</a></div>
+      <div class="header-actions"><label class="language-selector"><i class="fa-solid fa-globe" aria-hidden="true"></i><span class="sr-only">Език</span><select data-language-select aria-label="Избор на език"><option value="bg">BG</option><option value="en">EN</option></select></label><a class="text-link" href="${appOrigin}/login">Вход</a><a class="button button-small button-primary" href="${appOrigin}/register" data-analytics-event="registration_click">Безплатен тест</a></div>
     </div>
   </header>`;
 }
@@ -268,7 +268,7 @@ function header() {
 function footer() {
   return `<footer class="site-footer">
     <div class="shell footer-grid">
-      <div class="footer-brand"><a class="brand brand-light" href="/"><img src="/logo white.svg" alt="" width="46" height="42"><span>LogiTruck</span></a><p>Софтуер за транспортна фирма — от курс до печалба.</p></div>
+      <div class="footer-brand"><a class="brand brand-light" href="/"><span class="brand-mark" aria-hidden="true"><img src="/logo white.svg" alt="" width="46" height="42"></span><span>LogiTruck</span></a><p>Софтуер за транспортна фирма — от курс до печалба.</p></div>
       <div><h2>Функции</h2><a href="/funkcii/upravlenie-na-kursove/">Курсове</a><a href="/funkcii/upravlenie-na-avtopark/">Автопарк</a><a href="/funkcii/fakturi-i-plashtania/">Фактури</a><a href="/funkcii/cmr/">CMR</a></div>
       <div><h2>Ресурси</h2><a href="/blog/">Ръководства</a><a href="/za-kogo/malki-transportni-firmi/">За малки фирми</a><a href="${appOrigin}/register" data-analytics-event="registration_click">Безплатен тест</a><button class="footer-link-button" type="button" data-cookie-settings>Настройки за бисквитки</button></div>
       <div><h2>Контакт</h2><a href="mailto:metodiev@lumina-88.com">metodiev@lumina-88.com</a><a href="tel:+359892374768" data-analytics-event="phone_click">+359&nbsp;892&nbsp;374&nbsp;768</a><span>Тутракан, България</span></div>
@@ -296,14 +296,14 @@ function documentShell({ title, description, path, body, schema, type = "website
   <link rel="canonical" href="${canonical}">
   <meta property="og:type" content="${type}"><meta property="og:locale" content="bg_BG"><meta property="og:site_name" content="LogiTruck"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${canonicalOrigin}/assets/screens/dashboard-demo.png">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${canonicalOrigin}/assets/screens/dashboard-demo.png">
-  <link rel="stylesheet" href="/assets/build/styles.min.css?v=20260825-2"><link rel="stylesheet" href="/assets/build/content.min.css?v=20260825-1">
+  <link rel="stylesheet" href="/assets/build/styles.min.css?v=20260825-11"><link rel="stylesheet" href="/assets/build/content.min.css?v=20260825-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
   <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replaceAll("<", "\\u003c")}</script>
 </head><body>
   <a class="skip-link" href="#main-content">Към основното съдържание</a>${header()}
   <main id="main-content">${body}</main>${footer()}
-  <script src="/assets/build/analytics.min.js?v=20260825-1" defer></script><script src="/assets/build/content.min.js?v=20260825-1" defer></script>
+  <script src="/assets/build/language.min.js?v=20260825-4" defer></script><script src="/assets/build/analytics.min.js?v=20260825-1" defer></script><script src="/assets/build/content.min.js?v=20260825-1" defer></script>
 </body></html>`;
 }
 

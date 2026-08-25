@@ -340,8 +340,10 @@ const productStory = $("#product-story");
 const productSticky = $(".product-sticky", productStory || document);
 const productProgressFill = $("#product-progress-fill");
 let productFrame = 0;
+let mobileProductProgress = 0;
 
 const clamp = (value, minimum = 0, maximum = 1) => Math.min(maximum, Math.max(minimum, value));
+const productUsesScrollStory = () => window.innerWidth > 680;
 
 const setProductFrame = (progress) => {
   if (!productSlides.length) return;
@@ -378,7 +380,7 @@ const setProductFrame = (progress) => {
 };
 
 const getProductScrollMetrics = () => {
-  if (!productStory || !productSticky) return null;
+  if (!productStory || !productSticky || !productUsesScrollStory()) return null;
 
   const storyTop = productStory.getBoundingClientRect().top + window.scrollY;
   const stickyTop = Number.parseFloat(window.getComputedStyle(productSticky).top) || 0;
@@ -390,6 +392,10 @@ const getProductScrollMetrics = () => {
 
 const updateProductFromScroll = () => {
   productFrame = 0;
+  if (!productUsesScrollStory()) {
+    setProductFrame(mobileProductProgress);
+    return;
+  }
   const metrics = getProductScrollMetrics();
   if (!metrics) return;
   setProductFrame(clamp((window.scrollY - metrics.start) / metrics.distance));
@@ -403,10 +409,18 @@ const requestProductUpdate = () => {
 screenTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     const index = screenTabs.indexOf(tab);
-    const metrics = getProductScrollMetrics();
-    if (!metrics || index < 0) return;
-
+    if (index < 0) return;
     const targetProgress = productSlides.length > 1 ? index / (productSlides.length - 1) : 0;
+
+    if (!productUsesScrollStory()) {
+      mobileProductProgress = targetProgress;
+      setProductFrame(targetProgress);
+      return;
+    }
+
+    const metrics = getProductScrollMetrics();
+    if (!metrics) return;
+
     window.scrollTo({
       top: metrics.start + metrics.distance * targetProgress,
       behavior: reducedMotion ? "auto" : "smooth",
@@ -417,6 +431,59 @@ screenTabs.forEach((tab) => {
 window.addEventListener("scroll", requestProductUpdate, { passive: true });
 window.addEventListener("resize", requestProductUpdate);
 updateProductFromScroll();
+
+const floatingDemo = $(".floating-demo");
+const heroSection = $("#top");
+const contactSection = $("#contact");
+
+const updateFloatingDemo = () => {
+  if (!floatingDemo) return;
+  const heroBottom = heroSection?.getBoundingClientRect().bottom ?? 0;
+  const contactTop = contactSection?.getBoundingClientRect().top ?? Number.POSITIVE_INFINITY;
+  const overlapsPrimaryAction = heroBottom > (header?.getBoundingClientRect().height ?? 0) + 80;
+  const overlapsContactOrFooter = contactTop < window.innerHeight - 80;
+  floatingDemo.classList.toggle("is-hidden", overlapsPrimaryAction || overlapsContactOrFooter);
+};
+
+updateFloatingDemo();
+window.addEventListener("scroll", updateFloatingDemo, { passive: true });
+window.addEventListener("resize", updateFloatingDemo);
+
+const roiSection = $("#roi");
+const roiLinks = [...document.querySelectorAll('a[href="#roi"]')];
+
+const alignRoiSection = (behavior = "auto") => {
+  if (!roiSection) return;
+  const headerHeight = header?.getBoundingClientRect().height ?? 0;
+  const targetTop = roiSection.getBoundingClientRect().top + window.scrollY - headerHeight - 18;
+  window.scrollTo({ top: targetTop, behavior });
+};
+
+roiLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.history.pushState(null, "", "#roi");
+    document.body.classList.add("is-roi-aligning");
+    void roiSection?.offsetTop;
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => alignRoiSection(reducedMotion ? "auto" : "smooth"));
+    });
+
+    // Keep the target stable while below-the-fold sections finish layout,
+    // then restore deferred rendering without changing the final position.
+    const settleDelays = reducedMotion ? [40, 120] : [450, 800, 1200];
+    settleDelays.forEach((delay, index) => {
+      window.setTimeout(() => {
+        alignRoiSection("auto");
+        if (index === settleDelays.length - 1) {
+          document.body.classList.remove("is-roi-aligning");
+          window.requestAnimationFrame(() => alignRoiSection("auto"));
+        }
+      }, delay);
+    });
+  });
+});
 
 const roiInputs = [
   { input: $("#roi-trucks"), output: $("#roi-trucks-output") },
