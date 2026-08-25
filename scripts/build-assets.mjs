@@ -8,6 +8,7 @@ const assets = [
   ["styles.css", "styles.min.css", "css"],
   ["content.css", "content.min.css", "css"],
   ["analytics.js", "analytics.min.js", "js"],
+  ["language.js", "language.min.js", "js"],
   ["script.js", "script.min.js", "js"],
   ["content.js", "content.min.js", "js"],
 ];
@@ -19,6 +20,7 @@ for (const [sourceName, outputName, loader] of assets) {
   const result = await transform(source, {
     loader,
     minify: true,
+    charset: "utf8",
     legalComments: "none",
     target: loader === "js" ? "es2020" : undefined,
   });
