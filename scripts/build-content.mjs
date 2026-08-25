@@ -271,7 +271,7 @@ function footer() {
       <div class="footer-brand"><a class="brand brand-light" href="/"><span class="brand-mark" aria-hidden="true"><img src="/logo white.svg" alt="" width="46" height="42"></span><span>LogiTruck</span></a><p>Софтуер за транспортна фирма — от курс до печалба.</p></div>
       <div><h2>Функции</h2><a href="/funkcii/upravlenie-na-kursove/">Курсове</a><a href="/funkcii/upravlenie-na-avtopark/">Автопарк</a><a href="/funkcii/fakturi-i-plashtania/">Фактури</a><a href="/funkcii/cmr/">CMR</a></div>
       <div><h2>Ресурси</h2><a href="/blog/">Ръководства</a><a href="/za-kogo/malki-transportni-firmi/">За малки фирми</a><a href="${appOrigin}/register" data-analytics-event="registration_click">Безплатен тест</a><button class="footer-link-button" type="button" data-cookie-settings>Настройки за бисквитки</button></div>
-      <div><h2>Контакт</h2><a href="mailto:metodiev@lumina-88.com">metodiev@lumina-88.com</a><a href="tel:+359892374768" data-analytics-event="phone_click">+359&nbsp;892&nbsp;374&nbsp;768</a><span>Тутракан, България</span></div>
+      <div><h2>Контакт</h2><a href="mailto:support@lumina-88.com">support@lumina-88.com</a><a href="tel:+359892374768" data-analytics-event="phone_click">+359&nbsp;892&nbsp;374&nbsp;768</a><span>Тутракан, България</span></div>
     </div>
     <div class="shell footer-bottom"><p>© 2026 „ЛУМИНА 88“ ЕООД. Всички права запазени.</p><div><a href="${appOrigin}/terms-of-use">Условия</a><a href="${appOrigin}/privacy-policy">Поверителност</a></div></div>
   </footer>`;
@@ -285,7 +285,7 @@ function documentShell({ title, description, path, body, schema, type = "website
     .replaceAll('<aside class="takeaway">', '<aside class="takeaway" aria-label="Практичен извод">')
     .replaceAll('<aside class="article-aside">', '<aside class="article-aside" aria-label="Свързани страници">');
   const graph = [
-    { "@type": "Organization", "@id": `${canonicalOrigin}/#organization`, name: "ЛУМИНА 88 ЕООД", alternateName: "LogiTruck", url: `${canonicalOrigin}/`, logo: `${canonicalOrigin}/logo%20black.svg`, email: "metodiev@lumina-88.com", telephone: "+359892374768", address: { "@type": "PostalAddress", addressLocality: "Тутракан", addressCountry: "BG" } },
+    { "@type": "Organization", "@id": `${canonicalOrigin}/#organization`, name: "ЛУМИНА 88 ЕООД", alternateName: "LogiTruck", url: `${canonicalOrigin}/`, logo: `${canonicalOrigin}/logo%20black.svg`, email: "support@lumina-88.com", telephone: "+359892374768", address: { "@type": "PostalAddress", addressLocality: "Тутракан", addressCountry: "BG" } },
     { "@type": "WebSite", "@id": `${canonicalOrigin}/#website`, url: `${canonicalOrigin}/`, name: "LogiTruck", inLanguage: "bg-BG", publisher: { "@id": `${canonicalOrigin}/#organization` } },
     ...(schema || []),
   ];
