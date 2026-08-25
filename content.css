@@ -10,10 +10,10 @@
   padding: 8.5rem 0 5.5rem;
   color: #fff;
   background:
-    linear-gradient(to bottom, transparent 54%, rgb(77 51 99 / 38%) 76%, #503862 100%),
-    radial-gradient(circle at 80% 15%, rgb(139 92 246 / 28%), transparent 30rem),
+    linear-gradient(to bottom, transparent 54%, rgb(92 61 148 / 24%) 76%, #5f477f 100%),
+    radial-gradient(circle at 80% 15%, rgb(187 145 255 / 26%), transparent 30rem),
     radial-gradient(circle at 12% 90%, rgb(37 99 235 / 16%), transparent 28rem),
-    #241144;
+    var(--purple-bg);
 }
 
 .content-hero.compact { padding-bottom: 4.25rem; }
@@ -86,7 +86,7 @@
 }
 
 .content-hero + .content-section::before {
-  background: linear-gradient(to bottom, #503862 0, #6f5a80 72px, #9e8baa 150px, #d1c7d8 238px, transparent 340px);
+  background: linear-gradient(to bottom, #5f477f 0, #7c688d 72px, #aa98b6 150px, #d8cfdf 238px, transparent 340px);
 }
 
 .content-section.section-soft + .content-section:not(.section-soft)::before {
@@ -184,14 +184,14 @@ main > .content-section:last-child::after,
   text-align: center;
   background:
     linear-gradient(to bottom, transparent 62%, #2a1452 100%),
-    linear-gradient(135deg, #241144, #59359f);
+    linear-gradient(135deg, var(--purple-bg), #6848a6);
 }
 .content-cta h2 { max-width: 22ch; margin: 0 auto; color: #fff; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.05; }
 .content-cta p { max-width: 42rem; margin: 1.2rem auto 2rem; color: rgb(255 255 255 / 75%); font-size: 1.1rem; }
 
 .article-meta { margin-top: 1.4rem; color: rgb(255 255 255 / 58%); font-size: .85rem; }
 .article-layout { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: clamp(2.5rem, 7vw, 6rem); padding-top: 5rem; padding-bottom: 6rem; align-items: start; }
-.article-layout::before { position: absolute; z-index: 0; top: 0; left: 50%; width: 100vw; height: 340px; background: linear-gradient(to bottom, #503862 0, #6f5a80 72px, #9e8baa 150px, #d1c7d8 238px, transparent 340px); content: ""; transform: translateX(-50%); pointer-events: none; }
+.article-layout::before { position: absolute; z-index: 0; top: 0; left: 50%; width: 100vw; height: 340px; background: linear-gradient(to bottom, #5f477f 0, #7c688d 72px, #aa98b6 150px, #d8cfdf 238px, transparent 340px); content: ""; transform: translateX(-50%); pointer-events: none; }
 .article-layout > * { position: relative; z-index: 1; }
 .article-body { max-width: 52rem; }
 .article-body section + section { margin-top: 3rem; }
