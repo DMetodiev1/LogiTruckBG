@@ -91,7 +91,7 @@ for (const [sourceName, builtName] of assetPairs) {
 
 try {
   const llms = await readFile(join(root, "llms.txt"), "utf8");
-  if (!llms.startsWith("# LogiTruck\n")) errors.push("llms.txt: missing LogiTruck H1");
+  if (!/^# LogiTruck\r?\n/.test(llms)) errors.push("llms.txt: missing LogiTruck H1");
   for (const match of llms.matchAll(/https:\/\/www\.lumina-88\.com(\/[^\s)]*)/g)) {
     const pathname = new URL(match[0]).pathname;
     if (pathname === "/") continue;
