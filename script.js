@@ -17,7 +17,8 @@ window.addEventListener("scroll", updateHeader, { passive: true });
 menuToggle?.addEventListener("click", () => {
   const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
   menuToggle.setAttribute("aria-expanded", String(!isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Отвори менюто" : "Затвори менюто");
+  const english = document.documentElement.lang === "en";
+  menuToggle.setAttribute("aria-label", isOpen ? (english ? "Open menu" : "Отвори менюто") : (english ? "Close menu" : "Затвори менюто"));
   menu?.classList.toggle("is-open", !isOpen);
   document.body.classList.toggle("menu-open", !isOpen);
 });
@@ -25,7 +26,7 @@ menuToggle?.addEventListener("click", () => {
 $$('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", () => {
     menuToggle?.setAttribute("aria-expanded", "false");
-    menuToggle?.setAttribute("aria-label", "Отвори менюто");
+    menuToggle?.setAttribute("aria-label", document.documentElement.lang === "en" ? "Open menu" : "Отвори менюто");
     menu?.classList.remove("is-open");
     document.body.classList.remove("menu-open");
   });

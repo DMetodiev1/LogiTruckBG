@@ -563,6 +563,10 @@ body.is-roi-aligning main > section {
   box-shadow: 0 4px 0 rgb(79 47 143 / 16%), 0 0 0 4px rgb(146 92 242 / 10%);
 }
 
+.primary-nav .mobile-login {
+  display: none;
+}
+
 .menu-toggle {
   display: none;
   width: 44px;
@@ -3021,6 +3025,10 @@ body.is-roi-aligning main > section {
 
   .header-actions .text-link {
     display: none;
+  }
+
+  .primary-nav .mobile-login {
+    display: block;
   }
 
   .hero {

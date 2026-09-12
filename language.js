@@ -695,6 +695,14 @@ const applyLanguage = (language) => {
   applyingLanguage = true;
   allTextNodes().forEach((node) => applyTextNodeLanguage(node, currentLanguage));
   document.querySelectorAll("[aria-label], [placeholder], [title]").forEach((element) => applyAttributeLanguage(element, currentLanguage));
+  // This label is stateful: the cached initial label cannot describe an open menu.
+  const toggle = document.querySelector("[data-menu-toggle]");
+  if (toggle) {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-label", currentLanguage === "en"
+      ? (open ? "Close menu" : "Open menu")
+      : (open ? "Затвори менюто" : "Отвори менюто"));
+  }
   document.documentElement.lang = currentLanguage;
   document.body.dataset.language = currentLanguage;
   languageLogos.forEach((logo) => {
